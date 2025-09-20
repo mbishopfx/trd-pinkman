@@ -1,0 +1,45 @@
+# Robots.txt for The Pink Guy Painting LLC
+# https://callthepinkguy.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://callthepinkguy.com/sitemap.xml
+
+# Specific crawl directives for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block access to admin/internal areas (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /.*
+
+# Allow access to all images and assets
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+Allow: *.avif
+
+# Business information for crawlers
+# Business: The Pink Guy Painting LLC
+# Phone: (818) 383-2527
+# Email: callthepinkguy@gmail.com
+# Address: 18034 Ventura Blvd. Suite 242, Encino, CA 91316
+# Services: Interior Painting, Exterior Painting, Handyman Services, Cabinet Refinishing
