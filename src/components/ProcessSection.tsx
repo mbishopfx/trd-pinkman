@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { processSteps } from '@/lib/utils'
 
-const ProcessStep = ({ step, index, isLast }: { step: any, index: number, isLast: boolean }) => (
+const ProcessStep = ({ step, index }: { step: any, index: number }) => (
   <div className="relative flex flex-col items-center">
     
     {/* Step Number & Icon */}
@@ -41,16 +41,6 @@ const ProcessStep = ({ step, index, isLast }: { step: any, index: number, isLast
       </div>
     </motion.div>
 
-    {/* Connecting Line */}
-    {!isLast && (
-      <motion.div
-        initial={{ scaleY: 0 }}
-        whileInView={{ scaleY: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
-        className="hidden lg:block absolute top-20 left-1/2 transform -translate-x-1/2 w-0.5 h-32 bg-gradient-to-b from-pink-500/50 to-pink-600/30 origin-top"
-      />
-    )}
 
     {/* Step Content */}
     <motion.div
@@ -130,7 +120,6 @@ export function ProcessSection() {
               key={step.step}
               step={step}
               index={index}
-              isLast={index === 3}
             />
           ))}
         </div>
@@ -142,7 +131,6 @@ export function ProcessSection() {
               key={step.step}
               step={step}
               index={index + 4}
-              isLast={index === 2}
             />
           ))}
         </div>
@@ -154,19 +142,7 @@ export function ProcessSection() {
               <ProcessStep
                 step={step}
                 index={index}
-                isLast={index === processSteps.length - 1}
               />
-              
-              {/* Mobile Connecting Line */}
-              {index < processSteps.length - 1 && (
-                <motion.div
-                  initial={{ scaleY: 0 }}
-                  whileInView={{ scaleY: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
-                  className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-12 bg-gradient-to-b from-pink-500/50 to-pink-600/30 origin-top mt-6"
-                />
-              )}
             </div>
           ))}
         </div>
