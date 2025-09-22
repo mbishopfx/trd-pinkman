@@ -40,7 +40,7 @@ export function ContactSection() {
   }
 
   const handleEmail = () => {
-    window.location.href = 'mailto:callthepinkguy@gmail.com'
+    window.location.href = 'mailto:jackson@callthepinkguy.com'
   }
 
   return (
@@ -249,7 +249,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-semibold text-white group-hover:text-pink-300 transition-colors">
-                      callthepinkguy@gmail.com
+                      jackson@callthepinkguy.com
                     </p>
                     <p className="text-sm text-white/60">
                       Email us anytime

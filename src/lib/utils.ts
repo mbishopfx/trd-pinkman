@@ -12,7 +12,7 @@ export const siteConfig = {
   ogImage: "https://callthepinkguy.com/og.jpg",
   links: {
     phone: "(818) 383-2527",
-    email: "callthepinkguy@gmail.com",
+    email: "jackson@callthepinkguy.com",
     address: "18034 Ventura Blvd. Suite 242, Encino, CA 91316"
   }
 }

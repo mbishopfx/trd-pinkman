@@ -9,7 +9,7 @@ export function StructuredData() {
     "image": "https://callthepinkguy.com/og.jpg",
     "url": "https://callthepinkguy.com/",
     "telephone": "+1-818-383-2527",
-    "email": "callthepinkguy@gmail.com",
+    "email": "jackson@callthepinkguy.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "18034 Ventura Blvd. Suite 242",

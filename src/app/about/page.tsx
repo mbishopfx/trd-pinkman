@@ -55,7 +55,7 @@ const teamMembers = [
     role: '"Big Energy" - Job Site Artist',
     description: "Tristan is the big great energy on the job site. If you catch him not smiling, snap a photo, because I've never seen it. His enthusiasm carries over into his work, as he is passionate about turning your space into a beautiful work of art. At The Pink Guy we don't just see a bland project, we see an opportunity to transform the space into exactly what is desired.",
     expertise: ["Artistic Vision", "Space Transformation", "Positive Energy"],
-    image: "/team-headshot.png",
+    image: "/tristan.jpeg",
     fun_fact: "In his spare time, he is a licensed traveling massage therapist and an e-commerce entrepreneur."
   },
   {
