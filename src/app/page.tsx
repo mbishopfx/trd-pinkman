@@ -5,6 +5,7 @@ import { Navigation } from '@/components/Navigation'
 import { HeroSection } from '@/components/HeroSection'
 import { ServicesSection } from '@/components/ServicesSection'
 import { ProcessSection } from '@/components/ProcessSection'
+import { TeamSection } from '@/components/TeamSection'
 import { ReviewCarousel } from '@/components/ReviewCarousel'
 import { ContactSection } from '@/components/ContactSection'
 import { Footer } from '@/components/Footer'
@@ -33,6 +34,9 @@ export default function HomePage() {
 
         {/* Process Section */}
         <ProcessSection />
+
+        {/* Team Section */}
+        <TeamSection />
 
         {/* Reviews Carousel */}
         <ReviewCarousel />

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Phone, Star, CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { siteConfig } from '@/lib/utils'
+import Image from 'next/image'
 
 const floatingElements = [
   { size: 'w-3 h-3', delay: 0, x: '15%', y: '25%', opacity: 0.3 },
@@ -119,6 +120,28 @@ export function HeroSection() {
           Precision‑first painting and dependable handyman repairs across Sherman Oaks, Encino, 
           and the greater Los Angeles area. From drywall fixes to luxury finishes.
         </motion.p>
+
+        {/* The Pink Guy Owner Headshot */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="flex justify-center mb-8"
+        >
+          <div className="relative group">
+            <div className="absolute -inset-3 bg-gradient-to-r from-pink-500 to-pink-600 rounded-3xl opacity-60 group-hover:opacity-100 blur transition-all duration-300" />
+            <div className="relative w-96 h-96 lg:w-[480px] lg:h-[480px] rounded-3xl overflow-hidden border-8 border-white/20 shadow-2xl">
+              <Image
+                src="/headshot.png"
+                alt="The Pink Guy - Owner with Angie's List Super Service Award"
+                width={480}
+                height={480}
+                className="w-full h-full object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </motion.div>
 
         {/* Benefits Grid */}
         <motion.div
