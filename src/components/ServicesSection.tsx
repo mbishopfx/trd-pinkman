@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle } from 'lucide-react'
+import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { services } from '@/lib/utils'
@@ -53,13 +54,15 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => (
         </ul>
 
         {/* Learn More Button */}
-        <Button
-          variant="ghost"
-          className="w-full group/btn justify-between hover:bg-warm-100/50 border border-warm-300/50 hover:border-warm-500/70 mt-auto"
-        >
-          <span className="font-medium">Learn More</span>
-          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-        </Button>
+        <Link href="/contact">
+          <Button
+            variant="ghost"
+            className="w-full group/btn justify-between hover:bg-warm-100/50 border border-warm-300/50 hover:border-warm-500/70 mt-auto"
+          >
+            <span className="font-medium">Learn More</span>
+            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+          </Button>
+        </Link>
       </CardContent>
 
       {/* Hover Effect Overlay */}
@@ -147,10 +150,12 @@ export function ServicesSection() {
               Get a free consultation and personalized estimate. We'll help you choose 
               the right architectural finish for your home or business.
             </p>
-            <Button variant="gradient" size="lg" className="group">
-              <span className="font-semibold">Get Free Consultation</span>
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link href="/contact">
+              <Button variant="gradient" size="lg" className="group">
+                <span className="font-semibold">Get Free Consultation</span>
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>
