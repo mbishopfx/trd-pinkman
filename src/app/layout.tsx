@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Crimson_Text } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { StructuredData } from '@/components/StructuredData'
 import '@/styles/globals.css'
@@ -10,33 +10,43 @@ const inter = Inter({
   display: 'swap',
 })
 
+const crimsonText = Crimson_Text({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  themeColor: '#ec4899',
+  themeColor: '#44403c',
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://callthepinkguy.com'),
   title: {
-    default: 'The Pink Guy Painting LLC | Sherman Oaks Handyman & House Painting',
+    default: 'The Pink Guy Painting LLC | Premium Architectural Finishes Sherman Oaks',
     template: '%s | The Pink Guy Painting LLC'
   },
-  description: 'Precision‑first painting and dependable handyman repairs across Sherman Oaks, Encino, and the greater Los Angeles area. Interior/exterior painting, cabinet refinishing, lime wash, Venetian plaster, and handyman services.',
+  description: 'Architectural finishes that tell their own stories. Premium painting services, specialty finishes, and handyman repairs across Sherman Oaks, Encino, and Los Angeles. Interior painting, exterior painting, cabinet refinishing, lime wash, Venetian plaster, Roman clay finishes.',
   keywords: [
-    'handyman Sherman Oaks',
-    'handyman Encino', 
-    'house painting Los Angeles',
-    'interior painting Sherman Oaks',
-    'exterior painting Encino',
-    'cabinet refinishing LA',
-    'lime wash Los Angeles',
-    'Venetian plaster LA',
-    'drywall repair Sherman Oaks',
-    'home repair Los Angeles',
-    'painting contractor San Fernando Valley',
-    'commercial painting LA'
+    'architectural finishes Sherman Oaks',
+    'premium painting contractor Los Angeles',
+    'specialty finishes Sherman Oaks', 
+    'lime wash painting Los Angeles',
+    'Venetian plaster Sherman Oaks',
+    'Roman clay finishes LA',
+    'luxury interior painting Sherman Oaks',
+    'high-end exterior painting Encino',
+    'cabinet refinishing Sherman Oaks',
+    'custom paint finishes Los Angeles',
+    'artisan painting services LA',
+    'decorative painting Sherman Oaks',
+    'texture painting Los Angeles',
+    'handyman services Sherman Oaks'
   ],
   authors: [{ name: 'The Pink Guy Painting LLC' }],
   creator: 'The Pink Guy Painting LLC',
@@ -57,8 +67,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://callthepinkguy.com',
     siteName: 'The Pink Guy Painting LLC',
-    title: 'The Pink Guy Painting LLC | Sherman Oaks Handyman & House Painting',
-    description: 'Precision‑first painting and dependable handyman repairs. Interior/exterior painting, cabinet refinishing, lime wash, Venetian plaster, and handyman services. Serving Sherman Oaks, Encino, and LA.',
+    title: 'The Pink Guy Painting LLC | Premium Architectural Finishes Sherman Oaks',
+    description: 'Architectural finishes that tell their own stories. Premium painting services, specialty finishes, and handyman repairs across Sherman Oaks, Encino, and Los Angeles.',
     images: [
       {
         url: '/og-image.jpg',
@@ -70,8 +80,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Pink Guy Painting LLC | Sherman Oaks Handyman & House Painting',
-    description: 'Precision‑first painting and dependable handyman repairs across Sherman Oaks, Encino, and LA.',
+    title: 'The Pink Guy Painting LLC | Premium Architectural Finishes Sherman Oaks',
+    description: 'Architectural finishes that tell their own stories. Premium painting services and specialty finishes across Sherman Oaks and LA.',
     images: ['/og-image.jpg'],
   },
   alternates: {
@@ -88,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${crimsonText.variable}`}>
       <head>
         <StructuredData />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -97,17 +107,6 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        
-        {/* Preload critical fonts */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-          as="style"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        />
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}

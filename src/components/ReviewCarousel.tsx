@@ -13,11 +13,11 @@ const ReviewCard = ({ testimonial, index }: { testimonial: any, index: number })
     transition={{ delay: index * 0.1 }}
     className="flex-shrink-0 w-80 lg:w-96 mx-4"
   >
-    <div className="glass-card h-full p-6 relative group hover:glow-pink transition-all duration-500">
+    <div className="elegant-card h-full p-6 relative group hover:elegant-shadow transition-all duration-500">
       
       {/* Quote Icon */}
       <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-        <Quote className="w-8 h-8 text-pink-400" />
+        <Quote className="w-8 h-8 text-warm-600" />
       </div>
 
       {/* Stars */}
@@ -29,33 +29,33 @@ const ReviewCard = ({ testimonial, index }: { testimonial: any, index: number })
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 + i * 0.1 }}
           >
-            <Star className="w-5 h-5 text-yellow-400 fill-current" />
+            <Star className="w-5 h-5 text-amber-600 fill-current" />
           </motion.div>
         ))}
       </div>
 
       {/* Review Text */}
-      <blockquote className="text-white/90 mb-4 text-base leading-relaxed group-hover:text-white transition-colors">
+      <blockquote className="text-body mb-4 text-base leading-relaxed group-hover:text-stone-900 transition-colors">
         "{testimonial.text}"
       </blockquote>
 
       {/* Author */}
       <footer className="flex items-center space-x-3">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center font-bold text-white text-sm">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-warm-500 to-warm-600 flex items-center justify-center font-bold text-white text-sm">
           {testimonial.name.split(' ').map((n: string) => n[0]).join('')}
         </div>
         <div>
-          <p className="font-semibold text-white group-hover:text-pink-300 transition-colors">
+          <p className="font-semibold text-stone-900 group-hover:text-warm-700 transition-colors">
             {testimonial.name}
           </p>
-          <p className="text-xs text-white/60">
+          <p className="text-xs text-muted">
             Verified Customer
           </p>
         </div>
       </footer>
 
       {/* Hover Effect */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-pink-500/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-warm-100/20 to-sage-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </div>
   </motion.div>
 )
@@ -98,24 +98,24 @@ export function ReviewCarousel() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            <span className="text-white">What Our </span>
-            <span className="text-gradient-pink">Clients Say</span>
+          <h2 className="text-4xl lg:text-5xl text-display mb-4">
+            <span className="text-stone-900">What Our </span>
+            <span className="text-gradient-earth">Clients Say</span>
           </h2>
-          <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-body mb-8 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what homeowners across LA are saying about our work.
           </p>
           
           {/* Rating Summary */}
-          <div className="glass-card inline-flex items-center space-x-4 px-6 py-3">
+          <div className="elegant-card inline-flex items-center space-x-4 px-6 py-3">
             <div className="flex items-center space-x-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                <Star key={i} className="w-5 h-5 text-amber-600 fill-current" />
               ))}
             </div>
             <div className="text-left">
-              <p className="text-2xl font-bold text-gradient-pink">4.8/5</p>
-              <p className="text-sm text-white/70">Based on 33+ reviews</p>
+              <p className="text-2xl font-bold text-gradient-earth">4.8/5</p>
+              <p className="text-sm text-body">Based on 33+ reviews</p>
             </div>
           </div>
         </motion.div>
@@ -125,8 +125,8 @@ export function ReviewCarousel() {
       <div className="relative">
         
         {/* Gradient Overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-stone-50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-stone-50 to-transparent z-10 pointer-events-none" />
         
         {/* Carousel Container */}
         <motion.div
@@ -148,7 +148,7 @@ export function ReviewCarousel() {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(236, 72, 153, 0.3) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(160, 138, 117, 0.2) 1px, transparent 0)`,
           backgroundSize: '50px 50px'
         }} />
       </div>

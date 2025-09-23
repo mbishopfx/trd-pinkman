@@ -18,7 +18,7 @@ const ServiceDetailCard = ({ service, index }: { service: any, index: number }) 
     transition={{ duration: 0.6, delay: index * 0.1 }}
     className="h-full"
   >
-    <Card className="h-full hover:scale-105 transition-all duration-500 group cursor-pointer relative overflow-hidden">
+    <Card className="h-full hover:elegant-shadow transition-all duration-500 group cursor-pointer relative overflow-hidden elegant-card">
       
       {/* Service Icon */}
       <div className="absolute top-6 right-6 text-5xl opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-300">
@@ -26,10 +26,10 @@ const ServiceDetailCard = ({ service, index }: { service: any, index: number }) 
       </div>
 
       <CardHeader className="pb-6">
-        <CardTitle className="text-2xl group-hover:text-3xl transition-all duration-300">
+        <CardTitle className="text-2xl text-display text-stone-900 group-hover:text-gradient-earth transition-all duration-300">
           {service.title}
         </CardTitle>
-        <CardDescription className="text-lg leading-relaxed">
+        <CardDescription className="text-lg text-body leading-relaxed">
           {service.description}
         </CardDescription>
       </CardHeader>
@@ -38,7 +38,7 @@ const ServiceDetailCard = ({ service, index }: { service: any, index: number }) 
         
         {/* Features List */}
         <div>
-          <h4 className="font-semibold text-pink-300 mb-4 text-lg">What's Included:</h4>
+          <h4 className="font-semibold text-warm-700 mb-4 text-lg">What's Included:</h4>
           <ul className="space-y-3">
             {service.features.map((feature: string, idx: number) => (
               <motion.li
@@ -49,8 +49,8 @@ const ServiceDetailCard = ({ service, index }: { service: any, index: number }) 
                 transition={{ duration: 0.4, delay: index * 0.1 + idx * 0.05 }}
                 className="flex items-start space-x-3 group/item"
               >
-                <CheckCircle className="w-5 h-5 text-pink-400 flex-shrink-0 mt-1 group-hover/item:text-pink-300 transition-colors" />
-                <span className="text-white/80 group-hover/item:text-white/90 transition-colors">
+                <CheckCircle className="w-5 h-5 text-sage-600 flex-shrink-0 mt-1 group-hover/item:text-sage-700 transition-colors" />
+                <span className="text-body group-hover/item:text-stone-800 transition-colors">
                   {feature}
                 </span>
               </motion.li>
@@ -59,30 +59,28 @@ const ServiceDetailCard = ({ service, index }: { service: any, index: number }) 
         </div>
 
         {/* Contact Button */}
-        <Button
-          variant="gradient"
-          className="w-full group/btn"
+        <button
+          className="w-full group/btn portola-button py-3"
           onClick={() => window.location.href = 'tel:+18183832527'}
         >
           <Phone className="w-4 h-4 mr-2 group-hover/btn:animate-bounce" />
           <span className="font-semibold">Get Quote for {service.title}</span>
-        </Button>
+        </button>
       </CardContent>
 
       {/* Hover Effect Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-pink-600/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-warm-200/10 to-sage-200/10 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-lg pointer-events-none" />
     </Card>
   </motion.div>
 )
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen relative portola-gradient">
       
       {/* Background */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-t from-pink-900/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 texture-overlay" />
       </div>
 
       {/* Navigation */}
@@ -102,7 +100,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.5 }}
               className="mb-8"
             >
-              <Link href="/" className="inline-flex items-center space-x-2 text-pink-400 hover:text-pink-300 transition-colors group">
+              <Link href="/" className="inline-flex items-center space-x-2 text-warm-600 hover:text-warm-700 transition-colors group">
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 <span>Back to Home</span>
               </Link>
@@ -115,32 +113,32 @@ export default function ServicesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                  <span className="text-white">Our </span>
-                  <span className="text-gradient-pink">Services</span>
+                <h1 className="text-4xl lg:text-6xl text-display mb-6">
+                  <span className="text-stone-900">Our </span>
+                  <span className="text-gradient-earth">Services</span>
                 </h1>
-                <p className="text-xl text-white/70 mb-8 max-w-4xl mx-auto leading-relaxed">
-                  From precision painting to specialty finishes and reliable handyman services, 
-                  we deliver meticulous craftsmanship for every project across Sherman Oaks, 
-                  Encino, and greater Los Angeles.
+                <p className="text-xl text-body mb-8 max-w-4xl mx-auto leading-relaxed">
+                  Architectural finishes that tell their own stories. From premium painting services 
+                  to specialty finishes and reliable handyman services, we deliver meticulous 
+                  craftsmanship for every project across Sherman Oaks, Encino, and greater Los Angeles.
                 </p>
                 
                 {/* Stats */}
                 <div className="flex flex-wrap justify-center gap-8 mb-8">
-                  <div className="glass-card px-6 py-4">
+                  <div className="elegant-card px-6 py-4">
                     <div className="flex items-center space-x-2">
-                      <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                      <span className="text-2xl font-bold text-gradient-pink">4.8/5</span>
+                      <Star className="w-5 h-5 text-amber-600 fill-current" />
+                      <span className="text-2xl font-bold text-gradient-earth">4.8/5</span>
                     </div>
-                    <p className="text-sm text-white/60">Customer Rating</p>
+                    <p className="text-sm text-muted">Customer Rating</p>
                   </div>
-                  <div className="glass-card px-6 py-4">
-                    <span className="text-2xl font-bold text-gradient-pink">33+</span>
-                    <p className="text-sm text-white/60">Happy Customers</p>
+                  <div className="elegant-card px-6 py-4">
+                    <span className="text-2xl font-bold text-gradient-earth">33+</span>
+                    <p className="text-sm text-muted">Happy Customers</p>
                   </div>
-                  <div className="glass-card px-6 py-4">
-                    <span className="text-2xl font-bold text-gradient-pink">7</span>
-                    <p className="text-sm text-white/60">Service Categories</p>
+                  <div className="elegant-card px-6 py-4">
+                    <span className="text-2xl font-bold text-gradient-earth">7+</span>
+                    <p className="text-sm text-muted">Specialty Finishes</p>
                   </div>
                 </div>
               </motion.div>
@@ -167,31 +165,25 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass-card p-8 lg:p-12"
+              className="portola-card"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gradient-pink mb-6">
+              <h2 className="text-3xl lg:text-4xl text-display text-gradient-earth mb-6">
                 Ready to Get Started?
               </h2>
-              <p className="text-xl text-white/80 mb-8 leading-relaxed">
+              <p className="text-xl text-body mb-8 leading-relaxed">
                 Get a free consultation and personalized estimate for your project. 
-                We'll help you choose the right solution and provide transparent pricing.
+                We'll help you choose the right architectural finish and provide transparent pricing.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Button
-                  variant="gradient"
-                  size="xl"
+                <button
                   onClick={() => window.location.href = 'tel:+18183832527'}
-                  className="group"
+                  className="group portola-button px-10 py-4"
                 >
                   <Phone className="w-5 h-5 mr-3 group-hover:animate-bounce" />
-                  <span className="font-bold">Call (818) 383-2527</span>
-                </Button>
+                  <span className="font-semibold">Call (818) 383-2527</span>
+                </button>
                 <Link href="/contact">
-                  <Button
-                    variant="outline"
-                    size="xl"
-                    className="group"
-                  >
+                  <button className="group portola-button-outline px-10 py-4">
                     <span className="font-semibold">Get Free Quote</span>
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
@@ -200,7 +192,7 @@ export default function ServicesPage() {
                     >
                       →
                     </motion.div>
-                  </Button>
+                  </button>
                 </Link>
               </div>
             </motion.div>

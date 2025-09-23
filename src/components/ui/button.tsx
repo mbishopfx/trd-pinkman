@@ -8,13 +8,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "glass-button text-white hover:glow-pink hover:scale-105",
+        default: "portola-button hover:elegant-shadow",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "glass border-2 border-pink-500/30 text-white hover:bg-pink-500/10 hover:glow-pink",
-        secondary: "glass bg-white/5 text-white hover:bg-white/10",
-        ghost: "hover:bg-white/5 hover:text-white text-white/80",
-        link: "text-pink-400 underline-offset-4 hover:underline hover:text-pink-300",
-        gradient: "bg-gradient-to-r from-pink-500 to-pink-600 text-white hover:from-pink-600 hover:to-pink-700 shadow-lg hover:shadow-pink-500/25 hover:scale-105",
+        outline: "portola-button-outline hover:elegant-shadow",
+        secondary: "elegant-card bg-stone-100 text-stone-800 hover:bg-stone-200",
+        ghost: "hover:bg-stone-100/50 hover:text-stone-900 text-stone-700",
+        link: "text-warm-700 underline-offset-4 hover:underline hover:text-warm-800",
+        gradient: "bg-gradient-to-r from-stone-700 to-stone-800 text-white hover:from-stone-800 hover:to-stone-900 elegant-shadow hover:elegant-shadow-lg hover:scale-105",
       },
       size: {
         default: "h-12 px-6 py-3",
@@ -48,10 +48,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {variant === "gradient" && (
-          <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-pink-600/20 rounded-xl animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-r from-warm-400/20 to-sage-400/20 rounded-sm animate-pulse" />
         )}
         <span className="relative z-10">{children}</span>
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+        <div className="absolute inset-0 rounded-sm bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
       </Comp>
     )
   }

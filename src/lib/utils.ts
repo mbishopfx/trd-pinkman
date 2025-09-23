@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export const siteConfig = {
   name: "The Pink Guy Painting LLC",
-  description: "Precision‑first painting and dependable handyman repairs across Sherman Oaks, Encino, and the greater Los Angeles area.",
+  description: "Architectural finishes that tell their own stories. Premium painting services, specialty finishes, and handyman services across Sherman Oaks, Encino, and Los Angeles.",
   url: "https://callthepinkguy.com",
   ogImage: "https://callthepinkguy.com/og.jpg",
   links: {
@@ -19,52 +19,59 @@ export const siteConfig = {
 
 export const services = [
   {
-    id: "interior-painting",
-    title: "Interior Painting",
-    description: "Whole‑home repaints, room refreshes, ceilings, accent walls",
-    features: ["Drywall patching and texture matching", "Trim, baseboards, doors, crown molding", "Low‑VOC and eco‑friendly options"],
+    id: "premium-interior-painting",
+    title: "Premium Interior Painting",
+    description: "Whole‑home repaints, luxury room refreshes, accent walls, and specialty ceiling treatments that transform your living spaces",
+    features: ["Drywall patching and seamless texture matching", "Crown molding, baseboards, doors, and architectural trim", "Low‑VOC premium paints and eco‑friendly color options", "Color consultation and custom paint mixing"],
     icon: "🎨"
   },
   {
-    id: "exterior-painting",
-    title: "Exterior Painting", 
-    description: "Stucco, wood, and siding repainting",
-    features: ["Surface washing and preparation", "Weather-resistant coatings", "Fascia, soffits, and trim work"],
+    id: "exterior-painting-restoration",
+    title: "Exterior Painting & Restoration", 
+    description: "Professional stucco painting, wood siding restoration, and weather-resistant protective coatings for lasting curb appeal",
+    features: ["Power washing and thorough surface preparation", "Premium weather-resistant and fade-proof coatings", "Fascia, soffits, shutters, and decorative trim work", "Color matching and historic restoration expertise"],
     icon: "🏠"
   },
   {
-    id: "commercial-painting",
-    title: "Commercial Painting",
-    description: "Offices, retail, hospitality, multi‑unit properties", 
-    features: ["Off-hours scheduling", "Durable, cleanable coatings", "Brand-consistent color systems"],
-    icon: "🏢"
-  },
-  {
-    id: "cabinet-refinishing",
-    title: "Cabinet Refinishing",
-    description: "Clean, degloss, sand, prime, and spray‑finish systems",
-    features: ["Durable topcoats for kitchens", "Color matching and sheen selection", "Professional spray finish"],
-    icon: "🚪"
-  },
-  {
-    id: "lime-wash",
-    title: "Lime Wash",
-    description: "Soft, velvety, breathable finish that patinas gracefully",
-    features: ["Moisture-tolerant and eco-friendly", "Historic and modern applications", "Color layering techniques"],
+    id: "lime-wash-specialty-finish",
+    title: "Lime Wash Specialty Finish",
+    description: "Authentic lime-based finish that creates soft, organic texture with natural patina that evolves beautifully over time",
+    features: ["Breathable, moisture-tolerant natural finish", "Interior and exterior masonry applications", "Artisanal color layering and patina techniques", "Historic restoration and modern design applications"],
     icon: "✨"
   },
   {
-    id: "venetian-plaster",
-    title: "Venetian Plaster",
-    description: "Hand‑troweled, multi‑coat plaster with marble‑like polish",
-    features: ["Custom sheens from satin to mirror gloss", "Feature walls and luxury applications", "Timeless luxury finish"],
+    id: "roman-clay-plaster",
+    title: "Roman Clay Plaster",
+    description: "Smooth, knife-applied clay plaster finish offering subtle modern elegance with naturalistic stone and marble textures",
+    features: ["Hand-troweled application for unique texture", "Perfect for contemporary and traditional interiors", "Natural clay-based eco-friendly material", "Custom color blending and finish techniques"],
+    icon: "🏛️"
+  },
+  {
+    id: "venetian-plaster-luxury",
+    title: "Venetian Plaster & Luxury Finishes",
+    description: "Hand‑troweled, multi‑coat Venetian plaster with mirror-like polish and sophisticated European artisan techniques",
+    features: ["Custom sheens from satin to high-gloss mirror finish", "Feature walls and luxury architectural applications", "Authentic Italian plaster techniques", "Metallic and decorative specialty applications"],
     icon: "💎"
   },
   {
-    id: "handyman-services",
-    title: "Handyman Services",
-    description: "Drywall repair, trim work, and home maintenance",
-    features: ["TV mounting and shelving", "Door repair and hardware", "Fence/gate repair and pressure washing"],
+    id: "cabinet-refinishing-spray",
+    title: "Cabinet Refinishing & Spray Finishing",
+    description: "Professional kitchen and bathroom cabinet refinishing with durable spray finishes that rival new cabinetry",
+    features: ["Clean, degloss, sand, and prime preparation process", "Professional spray booth quality finish", "Color matching and custom paint selection", "Durable topcoats designed for high-use areas"],
+    icon: "🚪"
+  },
+  {
+    id: "commercial-painting-contractors",
+    title: "Commercial Painting Services",
+    description: "Professional commercial painting for offices, retail spaces, hospitality venues, and multi‑unit properties", 
+    features: ["Flexible off-hours and weekend scheduling", "Durable, cleanable coatings for high-traffic areas", "Brand-consistent color systems and corporate identity", "Large-scale project management and coordination"],
+    icon: "🏢"
+  },
+  {
+    id: "handyman-painting-services",
+    title: "Handyman & Home Repair Services",
+    description: "Complete home maintenance services including drywall repair, trim work, and precision touch-up painting",
+    features: ["TV mounting, picture hanging, and custom shelving", "Door adjustment, hardware replacement, and repairs", "Fence and gate repair with protective coating", "Pressure washing and exterior maintenance"],
     icon: "🔧"
   }
 ]

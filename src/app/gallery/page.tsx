@@ -90,10 +90,10 @@ const GalleryItem = ({ item, index, onClick }: { item: any, index: number, onCli
                 <div className="w-16 h-16 mx-auto mb-2 rounded-lg bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center">
                   <span className="text-2xl">🏠</span>
                 </div>
-                <p className="text-xs text-white/60">Before</p>
+                <p className="text-xs text-stone-600">Before</p>
               </div>
             </div>
-            <div className="absolute top-2 left-2 px-2 py-1 bg-black/50 rounded text-xs text-white">
+            <div className="absolute top-2 left-2 px-2 py-1 bg-stone-800/80 rounded text-xs text-white">
               BEFORE
             </div>
           </div>
@@ -105,10 +105,10 @@ const GalleryItem = ({ item, index, onClick }: { item: any, index: number, onCli
                 <div className="w-16 h-16 mx-auto mb-2 rounded-lg bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center">
                   <span className="text-2xl">✨</span>
                 </div>
-                <p className="text-xs text-white/60">After</p>
+                <p className="text-xs text-stone-600">After</p>
               </div>
             </div>
-            <div className="absolute top-2 right-2 px-2 py-1 bg-pink-500/80 rounded text-xs text-white">
+            <div className="absolute top-2 right-2 px-2 py-1 bg-warm-600/90 rounded text-xs text-white">
               AFTER
             </div>
           </div>
@@ -116,7 +116,7 @@ const GalleryItem = ({ item, index, onClick }: { item: any, index: number, onCli
         
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-end justify-center pb-4">
-          <span className="text-white font-medium">Click to View Details</span>
+          <span className="text-stone-900 font-medium">Click to View Details</span>
         </div>
       </div>
 
@@ -132,10 +132,10 @@ const GalleryItem = ({ item, index, onClick }: { item: any, index: number, onCli
             </span>
           )}
         </div>
-        <h3 className="font-semibold text-white group-hover:text-pink-300 transition-colors">
+        <h3 className="font-semibold text-stone-900 group-hover:text-warm-700 transition-colors">
           {item.title}
         </h3>
-        <p className="text-sm text-white/70 leading-relaxed">
+        <p className="text-sm text-body leading-relaxed">
           {item.description}
         </p>
       </div>
@@ -152,12 +152,11 @@ export default function GalleryPage() {
     : galleryItems.filter(item => item.category === selectedCategory)
 
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen relative portola-gradient">
       
       {/* Background */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-t from-pink-900/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 texture-overlay" />
       </div>
 
       {/* Navigation */}
@@ -177,7 +176,7 @@ export default function GalleryPage() {
               transition={{ duration: 0.5 }}
               className="mb-8"
             >
-              <Link href="/" className="inline-flex items-center space-x-2 text-pink-400 hover:text-pink-300 transition-colors group">
+              <Link href="/" className="inline-flex items-center space-x-2 text-warm-600 hover:text-warm-700 transition-colors group">
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 <span>Back to Home</span>
               </Link>
@@ -190,11 +189,11 @@ export default function GalleryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                  <span className="text-white">Project </span>
-                  <span className="text-gradient-pink">Gallery</span>
+                <h1 className="text-4xl lg:text-6xl text-display mb-6">
+                  <span className="text-stone-900">Project </span>
+                  <span className="text-gradient-earth">Gallery</span>
                 </h1>
-                <p className="text-xl text-white/70 mb-8 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-xl text-body mb-8 max-w-4xl mx-auto leading-relaxed">
                   See the transformation difference our meticulous prep-first process makes. 
                   From interior refreshes to complete exterior makeovers, every project showcases 
                   our commitment to quality craftsmanship.
@@ -215,8 +214,8 @@ export default function GalleryPage() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category
-                      ? 'glass-button text-white glow-pink'
-                      : 'glass text-white/70 hover:text-white hover:bg-white/10'
+                      ? 'portola-button text-white elegant-shadow'
+                      : 'elegant-card text-stone-700 hover:text-stone-900 hover:bg-stone-100/50'
                   }`}
                 >
                   {category}
@@ -242,7 +241,7 @@ export default function GalleryPage() {
 
             {filteredItems.length === 0 && (
               <div className="text-center py-16">
-                <p className="text-white/60 text-lg">No projects found in this category.</p>
+                <p className="text-muted text-lg">No projects found in this category.</p>
               </div>
             )}
           </div>
@@ -261,18 +260,16 @@ export default function GalleryPage() {
               <h2 className="text-3xl lg:text-4xl font-bold text-gradient-pink mb-6">
                 Ready for Your Transformation?
               </h2>
-              <p className="text-xl text-white/80 mb-8 leading-relaxed">
+              <p className="text-xl text-body mb-8 leading-relaxed">
                 Let's discuss your project and create something amazing together. 
                 Every project starts with a free consultation.
               </p>
-              <Button
-                variant="gradient"
-                size="xl"
+              <button
                 onClick={() => window.location.href = 'tel:+18183832527'}
-                className="group"
+                className="group portola-button px-12 py-4"
               >
-                <span className="font-bold">Get Your Free Consultation</span>
-              </Button>
+                <span className="font-semibold">Get Your Free Consultation</span>
+              </button>
             </motion.div>
           </div>
         </section>
@@ -304,7 +301,7 @@ export default function GalleryPage() {
               </div>
               
               <div className="space-y-6">
-                <p className="text-white/80 text-lg">{selectedItem.description}</p>
+                <p className="text-body text-lg">{selectedItem.description}</p>
                 
                 {/* Placeholder for detailed project info */}
                 <div className="glass bg-white/5 p-6 rounded-lg">
@@ -312,19 +309,19 @@ export default function GalleryPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div>
                       <span className="text-pink-400 font-medium">Service Type:</span>
-                      <span className="text-white/80 ml-2">{selectedItem.category}</span>
+                      <span className="text-body ml-2">{selectedItem.category}</span>
                     </div>
                     <div>
                       <span className="text-pink-400 font-medium">Timeline:</span>
-                      <span className="text-white/80 ml-2">2-3 days</span>
+                      <span className="text-body ml-2">2-3 days</span>
                     </div>
                     <div>
                       <span className="text-pink-400 font-medium">Location:</span>
-                      <span className="text-white/80 ml-2">Sherman Oaks, CA</span>
+                      <span className="text-body ml-2">Sherman Oaks, CA</span>
                     </div>
                     <div>
                       <span className="text-pink-400 font-medium">Year:</span>
-                      <span className="text-white/80 ml-2">2024</span>
+                      <span className="text-body ml-2">2024</span>
                     </div>
                   </div>
                 </div>

@@ -19,7 +19,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative bg-black/50 backdrop-blur-xl border-t border-white/10">
+    <footer className="relative bg-stone-100/80 backdrop-blur-xl border-t border-stone-200/50">
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -55,29 +55,29 @@ export function Footer() {
               </div>
             </div>
 
-            <p className="text-white/70 mb-6 leading-relaxed">
-              Precision‑first painting and dependable handyman repairs across Sherman Oaks, 
-              Encino, and the greater Los Angeles area.
+            <p className="text-body mb-6 leading-relaxed">
+              Architectural finishes that tell their own stories. Premium painting services and specialty finishes 
+              across Sherman Oaks, Encino, and the greater Los Angeles area.
             </p>
 
             {/* Rating */}
-            <div className="glass-card p-4 mb-6">
+            <div className="elegant-card p-4 mb-6">
               <div className="flex items-center space-x-2 mb-2">
                 <div className="flex items-center space-x-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-4 h-4 text-amber-600 fill-current" />
                   ))}
                 </div>
-                <span className="text-lg font-bold text-gradient-pink">4.8/5</span>
+                <span className="text-lg font-bold text-gradient-earth">4.8/5</span>
               </div>
-              <p className="text-sm text-white/70">
+              <p className="text-sm text-body">
                 Based on 33+ Google Reviews
               </p>
             </div>
 
             {/* Social Media Links */}
             <div className="mb-6">
-              <h5 className="text-sm font-semibold text-white mb-3">Follow Us</h5>
+              <h5 className="text-sm font-semibold text-stone-900 mb-3">Follow Us</h5>
               <div className="flex items-center space-x-3">
                 <motion.a
                   href="#"
@@ -85,9 +85,9 @@ export function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:glow-pink transition-all duration-300 group"
+                  className="w-10 h-10 rounded-lg elegant-card flex items-center justify-center hover:elegant-shadow transition-all duration-300 group"
                 >
-                  <Facebook className="w-5 h-5 text-pink-400 group-hover:text-pink-300" />
+                  <Facebook className="w-5 h-5 text-warm-600 group-hover:text-warm-700" />
                 </motion.a>
                 <motion.a
                   href="#"
@@ -95,9 +95,9 @@ export function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:glow-pink transition-all duration-300 group"
+                  className="w-10 h-10 rounded-lg elegant-card flex items-center justify-center hover:elegant-shadow transition-all duration-300 group"
                 >
-                  <Instagram className="w-5 h-5 text-pink-400 group-hover:text-pink-300" />
+                  <Instagram className="w-5 h-5 text-sage-600 group-hover:text-sage-700" />
                 </motion.a>
                 <motion.a
                   href="#"
@@ -105,15 +105,15 @@ export function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:glow-pink transition-all duration-300 group"
+                  className="w-10 h-10 rounded-lg elegant-card flex items-center justify-center hover:elegant-shadow transition-all duration-300 group"
                 >
-                  <Linkedin className="w-5 h-5 text-pink-400 group-hover:text-pink-300" />
+                  <Linkedin className="w-5 h-5 text-warm-600 group-hover:text-warm-700" />
                 </motion.a>
               </div>
             </div>
 
             {/* Tagline */}
-            <p className="text-pink-400 font-semibold italic">
+            <p className="text-gradient-sage font-semibold italic">
               "It's All in the Prep."
             </p>
           </motion.div>
@@ -125,7 +125,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="text-xl font-bold text-white mb-6">
+            <h4 className="text-xl font-bold text-stone-900 mb-6">
               Get In Touch
             </h4>
 
@@ -133,14 +133,14 @@ export function Footer() {
               
               {/* Phone */}
               <div className="flex items-center space-x-3 group cursor-pointer" onClick={handleCall}>
-                <div className="w-12 h-12 rounded-lg glass-card flex items-center justify-center group-hover:glow-pink transition-all duration-300">
-                  <Phone className="w-5 h-5 text-pink-400" />
+                <div className="w-12 h-12 rounded-lg elegant-card flex items-center justify-center group-hover:elegant-shadow transition-all duration-300">
+                  <Phone className="w-5 h-5 text-warm-600" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white group-hover:text-pink-300 transition-colors">
+                  <p className="font-semibold text-stone-900 group-hover:text-warm-700 transition-colors">
                     (818) 383-2527
                   </p>
-                  <p className="text-sm text-white/60">
+                  <p className="text-sm text-muted">
                     Call for free consultation
                   </p>
                 </div>
@@ -148,14 +148,14 @@ export function Footer() {
 
               {/* Email */}
               <div className="flex items-center space-x-3 group cursor-pointer" onClick={handleEmail}>
-                <div className="w-12 h-12 rounded-lg glass-card flex items-center justify-center group-hover:glow-pink transition-all duration-300">
-                  <Mail className="w-5 h-5 text-pink-400" />
+                <div className="w-12 h-12 rounded-lg elegant-card flex items-center justify-center group-hover:elegant-shadow transition-all duration-300">
+                  <Mail className="w-5 h-5 text-sage-600" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white group-hover:text-pink-300 transition-colors break-all">
+                  <p className="font-semibold text-stone-900 group-hover:text-sage-700 transition-colors break-all">
                     jackson@callthepinkguy.com
                   </p>
-                  <p className="text-sm text-white/60">
+                  <p className="text-sm text-muted">
                     Email us anytime
                   </p>
                 </div>
@@ -163,14 +163,14 @@ export function Footer() {
 
               {/* Address */}
               <div className="flex items-start space-x-3">
-                <div className="w-12 h-12 rounded-lg glass-card flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-pink-400" />
+                <div className="w-12 h-12 rounded-lg elegant-card flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-warm-600" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white">
+                  <p className="font-semibold text-stone-900">
                     18034 Ventura Blvd. Suite 242
                   </p>
-                  <p className="text-white/80">
+                  <p className="text-body">
                     Encino, CA 91316
                   </p>
                 </div>
@@ -178,17 +178,17 @@ export function Footer() {
 
               {/* Hours */}
               <div className="flex items-start space-x-3">
-                <div className="w-12 h-12 rounded-lg glass-card flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-pink-400" />
+                <div className="w-12 h-12 rounded-lg elegant-card flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-sage-600" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white">
+                  <p className="font-semibold text-stone-900">
                     Mon-Fri: 8AM-5PM
                   </p>
-                  <p className="text-white/80">
+                  <p className="text-body">
                     Sat: By Appointment
                   </p>
-                  <p className="text-white/80">
+                  <p className="text-body">
                     Sun: Closed
                   </p>
                 </div>
@@ -212,7 +212,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="text-xl font-bold text-white mb-6">
+            <h4 className="text-xl font-bold text-stone-900 mb-6">
               Our Services
             </h4>
 
@@ -228,8 +228,8 @@ export function Footer() {
                 'Drywall Repair'
               ].map((service, idx) => (
                 <li key={service} className="flex items-center space-x-3 group cursor-pointer">
-                  <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full group-hover:scale-125 transition-transform" />
-                  <span className="text-white/80 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+                  <div className="w-2 h-2 bg-gradient-to-r from-warm-500 to-warm-600 rounded-full group-hover:scale-125 transition-transform" />
+                  <span className="text-body group-hover:text-stone-900 group-hover:translate-x-1 transition-all duration-300">
                     {service}
                   </span>
                 </li>
@@ -244,22 +244,22 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h4 className="text-xl font-bold text-white mb-6">
+            <h4 className="text-xl font-bold text-stone-900 mb-6">
               Service Areas
             </h4>
 
             <div className="grid grid-cols-1 gap-2">
               {serviceAreas.slice(0, 12).map((area, idx) => (
                 <div key={area} className="flex items-center space-x-2 group">
-                  <div className="w-1.5 h-1.5 bg-pink-400 rounded-full group-hover:bg-pink-300 transition-colors" />
-                  <span className="text-sm text-white/70 group-hover:text-white/90 transition-colors">
+                  <div className="w-1.5 h-1.5 bg-warm-600 rounded-full group-hover:bg-warm-700 transition-colors" />
+                  <span className="text-sm text-body group-hover:text-stone-900 transition-colors">
                     {area}
                   </span>
                 </div>
               ))}
               <div className="flex items-center space-x-2 mt-2">
-                <div className="w-1.5 h-1.5 bg-pink-400 rounded-full" />
-                <span className="text-sm text-pink-300 font-medium">
+                <div className="w-1.5 h-1.5 bg-warm-600 rounded-full" />
+                <span className="text-sm text-gradient-earth font-medium">
                   + Greater Los Angeles
                 </span>
               </div>
@@ -273,23 +273,23 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="border-t border-white/10 pt-8"
+          className="border-t border-stone-200/50 pt-8"
         >
           <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
             
             {/* Copyright */}
             <div className="text-center lg:text-left">
-              <p className="text-white/60 text-sm">
+              <p className="text-muted text-sm">
                 © {currentYear} The Pink Guy Painting LLC. All rights reserved.
               </p>
-              <p className="text-white/50 text-xs mt-1">
+              <p className="text-stone-400 text-xs mt-1">
                 Licensed • Insured • Professional
               </p>
             </div>
 
             {/* Call to Action */}
             <div className="text-center lg:text-right">
-              <p className="text-white/70 text-sm mb-2">
+              <p className="text-body text-sm mb-2">
                 Ready to transform your space?
               </p>
               <Button

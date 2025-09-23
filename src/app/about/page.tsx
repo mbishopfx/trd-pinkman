@@ -13,32 +13,32 @@ import { testimonials } from '@/lib/utils'
 
 const values = [
   {
-    icon: <Award className="w-8 h-8 text-pink-400" />,
+    icon: <Award className="w-8 h-8 text-warm-600" />,
     title: "Quality Craftsmanship",
     description: "Every project receives meticulous attention to detail, from initial prep to final touch-ups."
   },
   {
-    icon: <Users className="w-8 h-8 text-pink-400" />,
+    icon: <Users className="w-8 h-8 text-sage-600" />,
     title: "Customer-Focused",
     description: "We prioritize clear communication, punctual service, and exceeding expectations on every job."
   },
   {
-    icon: <Clock className="w-8 h-8 text-pink-400" />,
+    icon: <Clock className="w-8 h-8 text-warm-600" />,
     title: "Reliable Service",
     description: "Consistent scheduling, professional crews, and projects completed on time and within budget."
   },
   {
-    icon: <Shield className="w-8 h-8 text-pink-400" />,
+    icon: <Shield className="w-8 h-8 text-sage-600" />,
     title: "Licensed & Insured",
     description: "Fully licensed, insured, and bonded for your peace of mind on every project."
   }
 ]
 
 const stats = [
-  { number: "4.8/5", label: "Google Rating", icon: <Star className="w-6 h-6 text-yellow-400 fill-current" /> },
-  { number: "33+", label: "Happy Customers", icon: <Users className="w-6 h-6 text-pink-400" /> },
-  { number: "7", label: "Service Categories", icon: <Award className="w-6 h-6 text-pink-400" /> },
-  { number: "100%", label: "Satisfaction Rate", icon: <CheckCircle className="w-6 h-6 text-green-400" /> }
+  { number: "4.8/5", label: "Google Rating", icon: <Star className="w-6 h-6 text-amber-600 fill-current" /> },
+  { number: "33+", label: "Happy Customers", icon: <Users className="w-6 h-6 text-warm-600" /> },
+  { number: "7", label: "Service Categories", icon: <Award className="w-6 h-6 text-sage-600" /> },
+  { number: "100%", label: "Satisfaction Rate", icon: <CheckCircle className="w-6 h-6 text-sage-600" /> }
 ]
 
 const teamMembers = [
@@ -71,150 +71,80 @@ const teamMembers = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen relative portola-gradient">
       
       {/* Background */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-t from-pink-900/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 texture-overlay" />
       </div>
 
       {/* Navigation */}
       <Navigation />
 
       {/* Main Content */}
-      <div className="relative z-10 pt-24 lg:pt-28">
+      <div className="pt-20">
         
-        {/* Header Section */}
-        <section className="py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            {/* Back Button */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-8"
-            >
-              <Link href="/" className="inline-flex items-center space-x-2 text-pink-400 hover:text-pink-300 transition-colors group">
-                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                <span>Back to Home</span>
-              </Link>
-            </motion.div>
+        {/* Back Navigation */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8"
+          >
+            <Link href="/" className="inline-flex items-center space-x-2 text-warm-600 hover:text-warm-700 transition-colors group">
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+              <span>Back to Home</span>
+            </Link>
+          </motion.div>
 
-            {/* Page Header */}
-            <div className="text-center mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                  <span className="text-white">About </span>
-                  <span className="text-gradient-pink">The Pink Guy</span>
-                </h1>
-                <p className="text-xl text-white/70 mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Your premier Sherman Oaks painting firm, dedicated to precision-first craftsmanship, 
-                  honest service, and 100% customer satisfaction. It's all in the prep.
-                </p>
-              </motion.div>
-            </div>
+          {/* Page Header */}
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="text-4xl lg:text-6xl text-display mb-6">
+                <span className="text-stone-900">About </span>
+                <span className="text-gradient-earth">The Pink Guy</span>
+              </h1>
+              <p className="text-xl text-body mb-8 max-w-4xl mx-auto leading-relaxed">
+                Architectural finishes that tell their own stories. Premium painting services, specialty finishes, 
+                and handyman repairs across Sherman Oaks, Encino, and Los Angeles.
+              </p>
+            </motion.div>
           </div>
-        </section>
+        </div>
 
         {/* Stats Section */}
-        <section className="py-16">
+        <section className="py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="glass-card p-6 text-center hover:glow-pink transition-all duration-300"
+                  className="text-center"
                 >
-                  <div className="flex justify-center mb-3">
-                    {stat.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-gradient-pink mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-white/70">
-                    {stat.label}
-                  </div>
+                  <Card className="h-full elegant-card">
+                    <CardContent className="pt-6 flex flex-col items-center">
+                      <div className="mb-4">
+                        {stat.icon}
+                      </div>
+                      <h3 className="text-3xl lg:text-4xl font-bold text-gradient-earth mb-2">
+                        {stat.number}
+                      </h3>
+                      <p className="text-body font-medium">
+                        {stat.label}
+                      </p>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Our Story Section */}
-        <section className="py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              
-              {/* Story Content */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                  <span className="text-white">Our </span>
-                  <span className="text-gradient-pink">Story</span>
-                </h2>
-                <div className="space-y-6 text-white/80 leading-relaxed">
-                  <p>
-                    The Pink Guy Painting LLC was founded on a simple principle: <strong className="text-pink-300">
-                    "It's All in the Prep."</strong> We believe that every lasting, beautiful finish starts with 
-                    meticulous preparation and attention to detail.
-                  </p>
-                  <p>
-                    Based in Sherman Oaks and serving the greater Los Angeles area, we've built our reputation 
-                    on precision-first painting and dependable handyman services. From whole-home repaints to 
-                    specialty finishes like Venetian plaster and lime wash, we approach every project with the 
-                    same level of care and professionalism.
-                  </p>
-                  <p>
-                    Our team takes pride in clean job sites, clear communication, and finishes that last. 
-                    Whether it's a single room refresh or a complete exterior transformation, we're committed 
-                    to exceeding your expectations.
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Mission Statement */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <Card className="border-pink-500/30">
-                  <CardHeader>
-                    <CardTitle className="text-2xl text-center">
-                      Our Mission
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center space-y-6">
-                    <p className="text-lg text-white/80 leading-relaxed">
-                      To deliver exceptional painting and handyman services through meticulous preparation, 
-                      quality materials, and honest craftsmanship that transforms spaces and exceeds expectations.
-                    </p>
-                    <div className="glass bg-pink-500/10 p-6 rounded-lg">
-                      <p className="text-2xl font-bold text-gradient-pink mb-2">
-                        "It's All in the Prep"
-                      </p>
-                      <p className="text-white/70 italic">
-                        Our philosophy that drives every project we undertake
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
             </div>
           </div>
         </section>
@@ -231,11 +161,11 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                  <span className="text-white">Our </span>
-                  <span className="text-gradient-pink">Values</span>
+                <h2 className="text-3xl lg:text-4xl text-display mb-4">
+                  <span className="text-stone-900">Our </span>
+                  <span className="text-gradient-earth">Values</span>
                 </h2>
-                <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                <p className="text-xl text-body max-w-3xl mx-auto">
                   The principles that guide every project and interaction
                 </p>
               </motion.div>
@@ -251,21 +181,21 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="h-full hover:glow-pink transition-all duration-300">
-                    <CardContent className="p-8">
-                      <div className="flex items-start space-x-4">
-                        <div className="flex-shrink-0 w-16 h-16 glass-card flex items-center justify-center">
+                  <Card className="h-full hover:elegant-shadow transition-all duration-300 elegant-card">
+                    <CardHeader>
+                      <div className="flex items-center space-x-4 mb-4">
+                        <div className="w-16 h-16 rounded-lg elegant-card bg-warm-100/50 flex items-center justify-center">
                           {value.icon}
                         </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-white mb-3">
-                            {value.title}
-                          </h3>
-                          <p className="text-white/80 leading-relaxed">
-                            {value.description}
-                          </p>
-                        </div>
+                        <CardTitle className="text-xl text-display text-stone-900">
+                          {value.title}
+                        </CardTitle>
                       </div>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-body text-base leading-relaxed">
+                        {value.description}
+                      </CardDescription>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -286,18 +216,18 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                  <span className="text-white">Meet the </span>
-                  <span className="text-gradient-pink">Team</span>
+                <h2 className="text-3xl lg:text-4xl text-display mb-4">
+                  <span className="text-stone-900">Meet Our </span>
+                  <span className="text-gradient-earth">Team</span>
                 </h2>
-                <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                  Professional, experienced, and dedicated to your satisfaction
+                <p className="text-xl text-body max-w-3xl mx-auto">
+                  The skilled professionals who bring passion and precision to every project
                 </p>
               </motion.div>
             </div>
 
             {/* Team Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={member.name}
@@ -306,64 +236,47 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="h-full">
-                    <CardContent className="p-8">
-                      <div className="text-center mb-6">
-                        <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center">
-                          {member.image ? (
-                            <Image
-                              src={member.image}
-                              alt={member.name}
-                              width={96}
-                              height={96}
-                              className="w-full h-full object-cover"
-                            />
-                          ) : (
-                            <span className="text-2xl font-bold text-white">
-                              {member.name.charAt(0)}
-                            </span>
-                          )}
-                        </div>
-                        <h3 className="text-xl font-bold text-gradient-pink mb-2">
-                          {member.name}
-                        </h3>
-                        <p className="text-pink-400 font-medium">
-                          {member.role}
-                        </p>
+                  <Card className="h-full hover:elegant-shadow transition-all duration-300 elegant-card">
+                    <CardHeader className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-warm-200/50">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          width={96}
+                          height={96}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      
-                      <p className="text-white/80 mb-4 leading-relaxed text-center">
+                      <CardTitle className="text-xl text-display text-stone-900">
+                        {member.name}
+                      </CardTitle>
+                      <CardDescription className="text-warm-600 font-medium">
+                        {member.role}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-body text-sm leading-relaxed">
                         {member.description}
                       </p>
-
-                      {member.fun_fact && (
-                        <div className="glass bg-pink-500/10 p-4 rounded-lg mb-4">
-                          <p className="text-sm text-pink-300 text-center italic">
-                            💫 {member.fun_fact}
-                          </p>
-                        </div>
-                      )}
-
-                      {member.specialty && (
-                        <div className="glass bg-blue-500/10 p-4 rounded-lg mb-6">
-                          <p className="text-sm text-blue-300 text-center">
-                            🔧 {member.specialty}
-                          </p>
-                        </div>
-                      )}
-
+                      
                       <div>
-                        <h4 className="font-semibold text-white mb-3 text-center">Expertise:</h4>
-                        <div className="flex flex-wrap justify-center gap-2">
-                          {member.expertise.map((skill, idx) => (
+                        <h4 className="text-warm-700 font-semibold text-sm mb-2">Areas of Expertise:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {member.expertise.map((skill, skillIndex) => (
                             <span
-                              key={idx}
-                              className="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-sm"
+                              key={skillIndex}
+                              className="px-3 py-1 bg-warm-50 text-warm-700 rounded-full text-xs font-medium"
                             >
                               {skill}
                             </span>
                           ))}
                         </div>
+                      </div>
+
+                      <div className="border-t border-warm-100 pt-4">
+                        <p className="text-body text-xs italic">
+                          <strong>Fun fact:</strong> {member.fun_fact}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>
@@ -373,11 +286,10 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
+        {/* Featured Testimonials */}
         <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            {/* Section Header */}
             <div className="text-center mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -385,14 +297,16 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                  <span className="text-white">What Customers </span>
-                  <span className="text-gradient-pink">Say</span>
+                <h2 className="text-3xl lg:text-4xl text-display mb-4">
+                  <span className="text-stone-900">What Clients </span>
+                  <span className="text-gradient-earth">Say</span>
                 </h2>
+                <p className="text-xl text-body max-w-3xl mx-auto">
+                  Hear from homeowners who experienced our architectural finishes
+                </p>
               </motion.div>
             </div>
 
-            {/* Testimonials Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.slice(0, 3).map((testimonial, index) => (
                 <motion.div
@@ -402,19 +316,34 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="h-full">
-                    <CardContent className="p-6">
+                  <Card className="h-full elegant-card">
+                    <CardContent className="pt-6">
+                      {/* Stars */}
                       <div className="flex items-center space-x-1 mb-4">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                          <Star key={i} className="w-4 h-4 text-amber-600 fill-current" />
                         ))}
                       </div>
-                      <blockquote className="text-white/90 mb-4 leading-relaxed">
+
+                      {/* Review */}
+                      <blockquote className="text-body text-sm mb-4 leading-relaxed">
                         "{testimonial.text}"
                       </blockquote>
-                      <footer className="font-semibold text-pink-300">
-                        — {testimonial.name}
-                      </footer>
+
+                      {/* Author */}
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-warm-500 to-warm-600 flex items-center justify-center text-white font-bold text-sm">
+                          {testimonial.name.split(' ').map((n: string) => n[0]).join('')}
+                        </div>
+                        <div>
+                          <p className="font-semibold text-stone-900">
+                            {testimonial.name}
+                          </p>
+                          <p className="text-muted text-xs">
+                            Verified Customer
+                          </p>
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -423,7 +352,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* Call to Action */}
         <section className="py-16 lg:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
@@ -431,33 +360,27 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass-card p-8 lg:p-12"
+              className="portola-card"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gradient-pink mb-6">
-                Ready to Work Together?
+              <h2 className="text-3xl lg:text-4xl text-display text-gradient-earth mb-6">
+                Ready to Experience The Pink Guy Difference?
               </h2>
-              <p className="text-xl text-white/80 mb-8 leading-relaxed">
-                Experience the difference that meticulous preparation and quality craftsmanship make. 
-                Contact us today for your free consultation.
+              <p className="text-xl text-body mb-8 leading-relaxed">
+                Let our skilled team transform your space with architectural finishes that tell your story. 
+                Every project starts with a free consultation.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Button
-                  variant="gradient"
-                  size="xl"
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
                   onClick={() => window.location.href = 'tel:+18183832527'}
-                  className="group"
+                  className="portola-button px-8 py-4"
                 >
-                  <Phone className="w-5 h-5 mr-3 group-hover:animate-bounce" />
-                  <span className="font-bold">Call (818) 383-2527</span>
-                </Button>
+                  <Phone className="w-5 h-5 mr-2" />
+                  <span className="font-semibold">Call (818) 383-2527</span>
+                </button>
                 <Link href="/contact">
-                  <Button
-                    variant="outline"
-                    size="xl"
-                    className="group"
-                  >
+                  <button className="portola-button-outline px-8 py-4">
                     <span className="font-semibold">Get Free Quote</span>
-                  </Button>
+                  </button>
                 </Link>
               </div>
             </motion.div>

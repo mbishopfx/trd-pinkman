@@ -21,14 +21,14 @@ const ProcessStep = ({ step, index }: { step: any, index: number }) => (
       className="relative z-10 group cursor-pointer"
     >
       {/* Step Circle */}
-      <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full glass-card flex items-center justify-center group-hover:glow-pink transition-all duration-300 group-hover:scale-110 mb-6">
-        <span className="text-2xl lg:text-3xl font-bold text-gradient-pink group-hover:animate-pulse">
+      <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full elegant-card flex items-center justify-center group-hover:elegant-shadow transition-all duration-300 group-hover:scale-110 mb-6">
+        <span className="text-2xl lg:text-3xl font-bold text-gradient-earth group-hover:animate-pulse">
           {step.step}
         </span>
         
         {/* Animated Ring */}
         <motion.div
-          className="absolute inset-0 rounded-full border-2 border-pink-500/30"
+          className="absolute inset-0 rounded-full border-2 border-warm-500/30"
           animate={{ 
             rotate: 360,
             scale: [1, 1.1, 1]
@@ -50,10 +50,10 @@ const ProcessStep = ({ step, index }: { step: any, index: number }) => (
       transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
       className="text-center max-w-sm"
     >
-      <h3 className="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-gradient-pink transition-all duration-300">
+      <h3 className="text-xl lg:text-2xl font-bold text-stone-900 mb-3 group-hover:text-gradient-earth transition-all duration-300">
         {step.title}
       </h3>
-      <p className="text-white/70 leading-relaxed group-hover:text-white/90 transition-colors">
+      <p className="text-body leading-relaxed group-hover:text-stone-900 transition-colors">
         {step.description}
       </p>
     </motion.div>
@@ -88,10 +88,10 @@ export function ProcessSection() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-white">Our Prep‑First </span>
-              <span className="text-gradient-pink">Process</span>
+              <span className="text-stone-900">Our Prep‑First </span>
+              <span className="text-gradient-earth">Process</span>
             </h2>
-            <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-body mb-8 max-w-3xl mx-auto leading-relaxed">
               Every lasting finish starts with meticulous preparation. Here's our proven 7-step process 
               that ensures beautiful results and fewer callbacks.
             </p>
@@ -105,7 +105,7 @@ export function ProcessSection() {
               className="glass-card inline-flex items-center space-x-3 px-6 py-3"
             >
               <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-white/90">
+              <span className="text-sm font-medium text-stone-800">
                 Proven • Reliable • Professional
               </span>
               <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full animate-pulse" />
@@ -159,7 +159,7 @@ export function ProcessSection() {
             <h3 className="text-2xl lg:text-3xl font-bold text-gradient-pink mb-4">
               Ready to Experience the Difference?
             </h3>
-            <p className="text-white/80 mb-6 leading-relaxed">
+            <p className="text-body mb-6 leading-relaxed">
               See why our prep-first approach creates finishes that last longer, look better, 
               and require fewer touch-ups over time.
             </p>

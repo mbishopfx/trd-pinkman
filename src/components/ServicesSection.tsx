@@ -15,7 +15,7 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => (
     transition={{ duration: 0.6, delay: index * 0.1 }}
     className="h-full"
   >
-    <Card className="h-full hover:scale-105 transition-all duration-500 group cursor-pointer relative overflow-hidden">
+    <Card className="h-full hover:elegant-shadow transition-all duration-500 group cursor-pointer relative overflow-hidden elegant-card">
       
       {/* Service Icon */}
       <div className="absolute top-4 right-4 text-4xl opacity-30 group-hover:opacity-60 group-hover:scale-110 transition-all duration-300">
@@ -23,10 +23,10 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => (
       </div>
 
       <CardHeader className="pb-4">
-        <CardTitle className="text-xl group-hover:text-2xl transition-all duration-300">
+        <CardTitle className="text-xl text-display text-stone-900 group-hover:text-gradient-earth transition-all duration-300">
           {service.title}
         </CardTitle>
-        <CardDescription className="text-base leading-relaxed">
+        <CardDescription className="text-base text-body leading-relaxed">
           {service.description}
         </CardDescription>
       </CardHeader>
@@ -44,8 +44,8 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => (
               transition={{ duration: 0.4, delay: index * 0.1 + idx * 0.05 }}
               className="flex items-start space-x-3 group/item"
             >
-              <CheckCircle className="w-5 h-5 text-pink-400 flex-shrink-0 mt-0.5 group-hover/item:text-pink-300 transition-colors" />
-              <span className="text-sm text-white/80 group-hover/item:text-white/90 transition-colors">
+              <CheckCircle className="w-5 h-5 text-sage-600 flex-shrink-0 mt-0.5 group-hover/item:text-sage-700 transition-colors" />
+              <span className="text-sm text-body group-hover/item:text-stone-900 transition-colors">
                 {feature}
               </span>
             </motion.li>
@@ -55,7 +55,7 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => (
         {/* Learn More Button */}
         <Button
           variant="ghost"
-          className="w-full group/btn justify-between hover:bg-pink-500/10 border border-pink-500/30 hover:border-pink-500/50 mt-auto"
+          className="w-full group/btn justify-between hover:bg-warm-100/50 border border-warm-300/50 hover:border-warm-500/70 mt-auto"
         >
           <span className="font-medium">Learn More</span>
           <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -63,7 +63,7 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => (
       </CardContent>
 
       {/* Hover Effect Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-pink-600/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-warm-200/10 to-sage-200/10 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-lg pointer-events-none" />
       
       {/* Shimmer Effect */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -95,12 +95,12 @@ export function ServicesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-white">Our </span>
-              <span className="text-gradient-pink">Services</span>
+            <h2 className="text-4xl lg:text-5xl text-display mb-4">
+              <span className="text-stone-900">Our </span>
+              <span className="text-gradient-earth">Services</span>
             </h2>
-            <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
-              From precision painting to specialty finishes and reliable handyman services, 
+            <p className="text-xl text-body mb-8 max-w-3xl mx-auto leading-relaxed">
+              Architectural finishes that tell their own stories. From premium painting to specialty finishes and reliable handyman services, 
               we deliver meticulous craftsmanship for every project.
             </p>
             
@@ -113,9 +113,9 @@ export function ServicesSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  className="glass-card px-4 py-2 hover:glow-pink transition-all duration-300 cursor-pointer"
+                  className="elegant-card px-4 py-2 hover:elegant-shadow transition-all duration-300 cursor-pointer"
                 >
-                  <span className="text-sm font-medium text-white/80">
+                  <span className="text-sm font-medium text-body">
                     {category}
                   </span>
                 </motion.div>
@@ -139,13 +139,13 @@ export function ServicesSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-16"
         >
-          <div className="glass-card p-8 inline-block">
-            <h3 className="text-2xl font-bold text-gradient-pink mb-4">
+          <div className="portola-card p-8 inline-block">
+            <h3 className="text-2xl font-bold text-gradient-earth mb-4">
               Not Sure Which Service You Need?
             </h3>
-            <p className="text-white/80 mb-6 max-w-2xl">
+            <p className="text-body mb-6 max-w-2xl">
               Get a free consultation and personalized estimate. We'll help you choose 
-              the right solution for your home or business.
+              the right architectural finish for your home or business.
             </p>
             <Button variant="gradient" size="lg" className="group">
               <span className="font-semibold">Get Free Consultation</span>

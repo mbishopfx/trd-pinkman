@@ -33,42 +33,11 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden portola-gradient">
       
       {/* Background Elements */}
-      <div className="absolute inset-0 hero-gradient" />
-      <div className="absolute inset-0 particles opacity-20" />
+      <div className="absolute inset-0 texture-overlay" />
       
-      {/* Subtle Floating Particles */}
-      {floatingElements.map((element, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: element.opacity, scale: 1 }}
-          transition={{ 
-            delay: element.delay,
-            duration: 1.5,
-            type: "spring",
-            stiffness: 100 
-          }}
-          className="absolute hidden lg:block"
-          style={{ left: element.x, top: element.y }}
-        >
-          <motion.div
-            animate={{ 
-              y: [0, -10, 0],
-              opacity: [element.opacity, element.opacity * 1.5, element.opacity]
-            }}
-            transition={{ 
-              duration: 6 + index * 0.8, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-            className={`${element.size} rounded-full bg-gradient-to-br from-pink-400 to-pink-600 blur-sm`}
-          />
-        </motion.div>
-      ))}
-
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
@@ -77,13 +46,13 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center space-x-2 glass-card px-6 py-3 mb-12 mx-auto"
+          className="inline-flex items-center space-x-2 elegant-card px-6 py-3 mb-12 mx-auto"
         >
-          <Star className="w-4 h-4 text-yellow-400 fill-current" />
-          <span className="text-sm font-medium text-white/90">
+          <Star className="w-4 h-4 text-amber-600 fill-current" />
+          <span className="text-sm font-medium text-stone-800">
             Rated 4.8/5 Stars • 33+ Reviews
           </span>
-          <Star className="w-4 h-4 text-yellow-400 fill-current" />
+          <Star className="w-4 h-4 text-amber-600 fill-current" />
         </motion.div>
 
         {/* Main Headline */}
@@ -91,13 +60,14 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-responsive-xl font-bold mb-6 leading-tight"
+          className="text-responsive-xl text-display mb-6 leading-tight"
         >
-          <span className="text-white">Sherman Oaks </span>
-          <span className="text-gradient-pink animate-pulse">Handyman</span>
+          <span className="text-stone-900">Finishes are just the </span>
+          <span className="text-gradient-earth">beginning</span>
           <br />
-          <span className="text-white">& House </span>
-          <span className="text-gradient-pink animate-pulse">Painting</span>
+          <span className="text-stone-700 text-responsive-lg font-normal italic">
+            Sherman Oaks' premier painting & handyman services
+          </span>
         </motion.h1>
 
         {/* Tagline */}
@@ -105,9 +75,9 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-2xl lg:text-3xl font-semibold text-pink-300 mb-4"
+          className="text-2xl lg:text-3xl font-semibold text-gradient-sage mb-4"
         >
-          It's All in the Prep.
+          "It's All in the Prep"
         </motion.p>
 
         {/* Description */}
@@ -115,30 +85,47 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg lg:text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg lg:text-xl text-body mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Precision‑first painting and dependable handyman repairs across Sherman Oaks, Encino, 
-          and the greater Los Angeles area. From drywall fixes to luxury finishes.
+          Architectural finishes that tell their own stories and set the stage for yours. 
+          Precision‑first painting, specialty finishes, and dependable handyman services 
+          across Sherman Oaks, Encino, and the greater Los Angeles area.
         </motion.p>
 
-        {/* The Pink Guy Owner Headshot */}
+        {/* Featured Work Showcase */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}
           className="flex justify-center mb-8"
         >
-          <div className="relative group">
-            <div className="absolute -inset-3 bg-gradient-to-r from-pink-500 to-pink-600 rounded-3xl opacity-60 group-hover:opacity-100 blur transition-all duration-300" />
-            <div className="relative w-96 h-96 lg:w-[480px] lg:h-[480px] rounded-3xl overflow-hidden border-8 border-white/20 shadow-2xl">
-              <Image
-                src="/headshot.png"
-                alt="The Pink Guy - Owner with Angie's List Super Service Award"
-                width={480}
-                height={480}
-                className="w-full h-full object-cover"
-                priority
-              />
+          <div className="relative group max-w-2xl">
+            <div className="absolute -inset-2 bg-gradient-to-r from-warm-400 to-sage-400 rounded-lg opacity-20 group-hover:opacity-30 blur transition-all duration-300" />
+            <div className="relative elegant-card p-8">
+              <div className="text-center">
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden elegant-shadow">
+                  <Image
+                    src="/headshot.png"
+                    alt="The Pink Guy - Master Craftsman"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div>
+                <h3 className="text-xl font-display text-stone-900 mb-2">
+                  Master Craftsmanship
+                </h3>
+                <p className="text-body mb-4">
+                  25 years of experience in premium interior and exterior painting, 
+                  specialty finishes, and precision handyman services.
+                </p>
+                <div className="flex justify-center space-x-4 text-sm text-muted">
+                  <span>• Licensed & Insured</span>
+                  <span>• Angie's List Super Service</span>
+                  <span>• 4.8★ Rating</span>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -156,10 +143,10 @@ export function HeroSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
-              className="glass-card p-4 hover:glow-pink transition-all duration-300"
+              className="elegant-card p-4 hover:elegant-shadow transition-all duration-300"
             >
-              <CheckCircle className="w-6 h-6 text-green-400 mx-auto mb-2" />
-              <p className="text-sm font-medium text-white/90">
+              <CheckCircle className="w-6 h-6 text-sage-600 mx-auto mb-2" />
+              <p className="text-sm font-medium text-stone-800">
                 {benefit}
               </p>
             </motion.div>
@@ -173,23 +160,19 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 1.0 }}
           className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8"
         >
-          <Button
-            variant="gradient"
-            size="xl"
+          <button
             onClick={handleCall}
-            className="group w-full sm:w-auto"
+            className="group w-full sm:w-auto portola-button px-12 py-4"
           >
             <Phone className="w-5 h-5 mr-3 group-hover:animate-bounce" />
-            <span className="font-bold">Call (818) 383-2527</span>
-          </Button>
+            <span className="font-semibold">Call (818) 383-2527</span>
+          </button>
 
-          <Button
-            variant="outline"
-            size="xl"
+          <button
             onClick={handleQuote}
-            className="w-full sm:w-auto group"
+            className="w-full sm:w-auto group portola-button-outline px-12 py-4"
           >
-            <span className="font-semibold">Get Free Quote</span>
+            <span className="font-semibold">View Collections</span>
             <motion.div
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
@@ -197,7 +180,7 @@ export function HeroSection() {
             >
               →
             </motion.div>
-          </Button>
+          </button>
         </motion.div>
 
         {/* Hours */}
@@ -205,14 +188,14 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="text-center text-white/60 text-sm"
+          className="text-center text-muted text-sm"
         >
-          <p>Mon-Fri: 8AM-5PM • Sat: By Appointment • Sun: Closed</p>
+          <p>Hours: Mon-Fri 8AM-5PM • Sat by Appointment • Serving Sherman Oaks & Los Angeles</p>
         </motion.div>
       </div>
 
       {/* Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-warm-50/80 to-transparent" />
       
     </section>
   )

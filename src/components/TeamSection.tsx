@@ -40,7 +40,7 @@ const TeamMemberCard = ({ member, index }: { member: any, index: number }) => (
     transition={{ duration: 0.6, delay: index * 0.2 }}
     className="group"
   >
-    <div className="glass-card p-6 lg:p-8 h-full hover:glow-pink transition-all duration-500 relative overflow-hidden">
+    <div className="elegant-card p-6 lg:p-8 h-full hover:elegant-shadow transition-all duration-500 relative overflow-hidden">
       
       {/* Background Pattern */}
       <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
@@ -68,24 +68,24 @@ const TeamMemberCard = ({ member, index }: { member: any, index: number }) => (
 
       {/* Member Info */}
       <div className="text-center mb-4">
-        <h3 className="text-xl lg:text-2xl font-bold text-white mb-2 group-hover:text-gradient-pink transition-all duration-300">
+        <h3 className="text-xl lg:text-2xl font-bold text-stone-900 mb-2 group-hover:text-gradient-earth transition-all duration-300">
           {member.name}
         </h3>
-        <p className="text-pink-400 font-semibold text-sm lg:text-base mb-2">
+        <p className="text-warm-600 font-semibold text-sm lg:text-base mb-2">
           {member.title}
         </p>
         
         {/* Specialty Badge */}
-        <div className="inline-flex items-center space-x-1 glass-card px-3 py-1 mb-4">
-          <Star className="w-3 h-3 text-yellow-400 fill-current" />
-          <span className="text-xs text-white/80 font-medium">
+        <div className="inline-flex items-center space-x-1 elegant-card bg-warm-50/50 px-3 py-1 mb-4">
+          <Star className="w-3 h-3 text-amber-600 fill-current" />
+          <span className="text-xs text-stone-700 font-medium">
             {member.specialty}
           </span>
         </div>
       </div>
 
       {/* Bio */}
-      <div className="text-sm lg:text-base text-white/80 leading-relaxed">
+      <div className="text-sm lg:text-base text-body leading-relaxed">
         {member.bio.split('\n\n').map((paragraph: string, idx: number) => (
           <motion.p
             key={idx}
@@ -134,10 +134,10 @@ export function TeamSection() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-white">Meet The </span>
-              <span className="text-gradient-pink">Painters</span>
+              <span className="text-stone-900">Meet The </span>
+              <span className="text-gradient-earth">Painters</span>
             </h2>
-            <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-body mb-8 max-w-3xl mx-auto leading-relaxed">
               Our dedicated team brings passion, expertise, and personality to every project. 
               Get to know the craftsmen who will transform your space.
             </p>
@@ -153,7 +153,7 @@ export function TeamSection() {
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
                   className="glass-card px-4 py-2 hover:glow-pink transition-all duration-300 cursor-pointer"
                 >
-                  <span className="text-sm font-medium text-white/80">
+                  <span className="text-sm font-medium text-stone-800">
                     {value}
                   </span>
                 </motion.div>
@@ -181,7 +181,7 @@ export function TeamSection() {
             <h3 className="text-2xl font-bold text-gradient-pink mb-4">
               Ready to Work with Our Team?
             </h3>
-            <p className="text-white/80 mb-6 max-w-2xl">
+            <p className="text-body mb-6 max-w-2xl">
               Experience the difference that passionate craftsmanship makes. 
               Contact us today to schedule your consultation.
             </p>
@@ -192,7 +192,7 @@ export function TeamSection() {
             >
               <a 
                 href="tel:+18183832527" 
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-pink-600 text-white font-bold rounded-full hover:from-pink-600 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-pink-500/25"
+                className="inline-flex items-center px-8 py-4 portola-button rounded-lg transition-all duration-300 elegant-shadow"
               >
                 <span>Call (818) 383-2527</span>
               </a>

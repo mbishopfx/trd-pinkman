@@ -42,7 +42,7 @@ export function Navigation() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "glass-nav backdrop-blur-2xl bg-black/40 shadow-lg"
+            ? "portola-nav"
             : "bg-transparent"
         )}
       >
@@ -78,10 +78,10 @@ export function Navigation() {
                 >
                   <Link
                     href={item.href}
-                    className="text-white/80 hover:text-white text-sm font-medium transition-all duration-300 relative group py-2"
+                    className="text-stone-700 hover:text-stone-900 text-sm font-medium transition-all duration-300 relative group py-2"
                   >
                     {item.label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-pink-600 group-hover:w-full transition-all duration-300" />
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-stone-800 group-hover:w-full transition-all duration-300" />
                   </Link>
                 </motion.div>
               ))}
@@ -89,15 +89,13 @@ export function Navigation() {
 
             {/* Call Button */}
             <div className="flex items-center space-x-4">
-              <Button
-                variant="gradient"
-                size="default"
+              <button
                 onClick={handleCall}
-                className="hidden sm:flex items-center space-x-2 group"
+                className="hidden sm:flex items-center space-x-2 group portola-button"
               >
                 <Phone className="w-4 h-4 group-hover:animate-bounce" />
                 <span className="font-semibold">(818) 383-2527</span>
-              </Button>
+              </button>
 
               {/* Mobile Menu Button */}
               <Button
@@ -136,7 +134,7 @@ export function Navigation() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-80 max-w-[85vw] glass-nav z-50 lg:hidden"
+              className="fixed top-0 right-0 h-full w-80 max-w-[85vw] portola-nav z-50 lg:hidden"
             >
               <div className="flex flex-col h-full pt-20 p-6">
                 
@@ -152,7 +150,7 @@ export function Navigation() {
                       <Link
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block text-lg font-medium text-white/80 hover:text-white py-3 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+                        className="block text-lg font-medium text-stone-700 hover:text-stone-900 py-3 px-4 rounded-lg hover:bg-stone-100/50 transition-all duration-300"
                       >
                         {item.label}
                       </Link>
@@ -167,24 +165,22 @@ export function Navigation() {
                   transition={{ delay: 0.3 }}
                   className="mt-8 pt-8 border-t border-white/10"
                 >
-                  <Button
-                    variant="gradient"
-                    size="lg"
+                  <button
                     onClick={() => {
                       handleCall()
                       setIsMobileMenuOpen(false)
                     }}
-                    className="w-full flex items-center justify-center space-x-3"
+                    className="w-full flex items-center justify-center space-x-3 portola-button py-4"
                   >
                     <Phone className="w-5 h-5" />
                     <span className="font-semibold">(818) 383-2527</span>
-                  </Button>
+                  </button>
 
                   <div className="mt-6 text-center">
-                    <p className="text-white/60 text-sm">
+                    <p className="text-stone-600 text-sm">
                       Mon-Fri: 8AM-5PM
                     </p>
-                    <p className="text-white/60 text-sm">
+                    <p className="text-stone-600 text-sm">
                       Sat: By Appointment
                     </p>
                   </div>

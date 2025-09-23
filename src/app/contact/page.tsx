@@ -10,12 +10,11 @@ import { Footer } from '@/components/Footer'
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen relative portola-gradient">
       
       {/* Background */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-t from-pink-900/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 texture-overlay" />
       </div>
 
       {/* Navigation */}
@@ -35,7 +34,7 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
               className="mb-8"
             >
-              <Link href="/" className="inline-flex items-center space-x-2 text-pink-400 hover:text-pink-300 transition-colors group">
+              <Link href="/" className="inline-flex items-center space-x-2 text-warm-600 hover:text-warm-700 transition-colors group">
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 <span>Back to Home</span>
               </Link>
@@ -48,13 +47,13 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                  <span className="text-white">Contact </span>
-                  <span className="text-gradient-pink">Us</span>
+                <h1 className="text-4xl lg:text-6xl text-display mb-6">
+                  <span className="text-stone-900">Contact </span>
+                  <span className="text-gradient-earth">Us</span>
                 </h1>
-                <p className="text-xl text-white/70 mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Ready to transform your space? Get in touch for a free consultation and personalized estimate. 
-                  We're here to help bring your vision to life.
+                <p className="text-xl text-body mb-8 max-w-4xl mx-auto leading-relaxed">
+                  Ready to transform your space with architectural finishes that tell their own stories? 
+                  Get in touch for a free consultation and personalized estimate. We're here to help bring your vision to life.
                 </p>
               </motion.div>
             </div>

@@ -48,7 +48,7 @@ export function ContactSection() {
       
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-pink-900/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-warm-100/20 via-transparent to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,12 +61,12 @@ export function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-white">Get Your Free </span>
-              <span className="text-gradient-pink">Consultation</span>
+            <h2 className="text-4xl lg:text-5xl text-display mb-4">
+              <span className="text-stone-900">Get Your Free </span>
+              <span className="text-gradient-earth">Consultation</span>
             </h2>
-            <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Ready to transform your space? Contact us today for a personalized estimate 
+            <p className="text-xl text-body mb-8 max-w-3xl mx-auto leading-relaxed">
+              Ready to transform your space with architectural finishes? Contact us today for a personalized estimate 
               and discover why homeowners across LA trust The Pink Guy.
             </p>
           </motion.div>
@@ -83,7 +83,7 @@ export function ContactSection() {
           >
             <Card className="relative overflow-hidden">
               <CardHeader>
-                <CardTitle className="text-2xl">
+                <CardTitle className="text-2xl text-display">
                   Request Your Quote
                 </CardTitle>
               </CardHeader>
@@ -95,10 +95,10 @@ export function ContactSection() {
                     className="text-center py-8"
                   >
                     <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-gradient-pink mb-2">
+                    <h3 className="text-2xl font-bold text-gradient-earth mb-2">
                       Thank You!
                     </h3>
-                    <p className="text-white/80">
+                    <p className="text-body">
                       We'll contact you within 24 hours to discuss your project.
                     </p>
                   </motion.div>
@@ -108,7 +108,7 @@ export function ContactSection() {
                     {/* Name & Email Row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-white/80 mb-2">
+                        <label className="block text-sm font-medium text-stone-700 mb-2">
                           Full Name *
                         </label>
                         <input
@@ -117,12 +117,12 @@ export function ContactSection() {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg glass border border-white/20 bg-white/5 text-white placeholder-white/40 focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all"
+                          className="w-full px-4 py-3 rounded-lg border border-stone-300 bg-white/90 text-stone-900 placeholder-stone-400 focus:outline-none focus:border-warm-600 focus:ring-1 focus:ring-warm-600 transition-all"
                           placeholder="John Smith"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-white/80 mb-2">
+                        <label className="block text-sm font-medium text-stone-700 mb-2">
                           Email Address *
                         </label>
                         <input
@@ -131,7 +131,7 @@ export function ContactSection() {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg glass border border-white/20 bg-white/5 text-white placeholder-white/40 focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all"
+                          className="w-full px-4 py-3 rounded-lg border border-stone-300 bg-white/90 text-stone-900 placeholder-stone-400 focus:outline-none focus:border-warm-600 focus:ring-1 focus:ring-warm-600 transition-all"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -140,7 +140,7 @@ export function ContactSection() {
                     {/* Phone & Service Row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-white/80 mb-2">
+                        <label className="block text-sm font-medium text-stone-700 mb-2">
                           Phone Number
                         </label>
                         <input
@@ -148,19 +148,19 @@ export function ContactSection() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg glass border border-white/20 bg-white/5 text-white placeholder-white/40 focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all"
+                          className="w-full px-4 py-3 rounded-lg border border-stone-300 bg-white/90 text-stone-900 placeholder-stone-400 focus:outline-none focus:border-warm-600 focus:ring-1 focus:ring-warm-600 transition-all"
                           placeholder="(818) 555-0123"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-white/80 mb-2">
+                        <label className="block text-sm font-medium text-stone-700 mb-2">
                           Service Needed
                         </label>
                         <select
                           name="service"
                           value={formData.service}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg glass border border-white/20 bg-white/5 text-white focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all"
+                          className="w-full px-4 py-3 rounded-lg border border-stone-300 bg-white/90 text-stone-900 focus:outline-none focus:border-warm-600 focus:ring-1 focus:ring-warm-600 transition-all"
                         >
                           <option value="">Select a service</option>
                           <option value="interior-painting">Interior Painting</option>
@@ -177,7 +177,7 @@ export function ContactSection() {
 
                     {/* Message */}
                     <div>
-                      <label className="block text-sm font-medium text-white/80 mb-2">
+                      <label className="block text-sm font-medium text-stone-700 mb-2">
                         Project Details
                       </label>
                       <textarea
@@ -185,7 +185,7 @@ export function ContactSection() {
                         value={formData.message}
                         onChange={handleChange}
                         rows={4}
-                        className="w-full px-4 py-3 rounded-lg glass border border-white/20 bg-white/5 text-white placeholder-white/40 focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-stone-300 bg-white/90 text-stone-900 placeholder-stone-400 focus:outline-none focus:border-warm-600 focus:ring-1 focus:ring-warm-600 transition-all resize-none"
                         placeholder="Tell us about your project... rooms, timeline, specific needs, etc."
                       />
                     </div>
@@ -218,7 +218,7 @@ export function ContactSection() {
             {/* Quick Contact */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">
+                <CardTitle className="text-xl text-display">
                   Prefer to Call?
                 </CardTitle>
               </CardHeader>
@@ -232,7 +232,7 @@ export function ContactSection() {
                   <Phone className="w-5 h-5 mr-3 group-hover:animate-bounce" />
                   <span className="font-bold">(818) 383-2527</span>
                 </Button>
-                <p className="text-white/70 text-center">
+                <p className="text-body text-center">
                   Get immediate answers to your questions
                 </p>
               </CardContent>
@@ -244,14 +244,14 @@ export function ContactSection() {
                 
                 {/* Email */}
                 <div className="flex items-center space-x-4 group cursor-pointer" onClick={handleEmail}>
-                  <div className="w-12 h-12 rounded-lg glass flex items-center justify-center group-hover:glow-pink transition-all duration-300">
-                    <Mail className="w-6 h-6 text-pink-400" />
+                  <div className="w-12 h-12 rounded-lg elegant-card flex items-center justify-center group-hover:elegant-shadow transition-all duration-300">
+                    <Mail className="w-6 h-6 text-sage-600" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white group-hover:text-pink-300 transition-colors">
+                    <p className="font-semibold text-stone-900 group-hover:text-sage-700 transition-colors">
                       jackson@callthepinkguy.com
                     </p>
-                    <p className="text-sm text-white/60">
+                    <p className="text-sm text-muted">
                       Email us anytime
                     </p>
                   </div>
@@ -259,14 +259,14 @@ export function ContactSection() {
 
                 {/* Address */}
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-lg glass flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-pink-400" />
+                  <div className="w-12 h-12 rounded-lg elegant-card flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-warm-600" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white">
+                    <p className="font-semibold text-stone-900">
                       18034 Ventura Blvd. Suite 242
                     </p>
-                    <p className="text-white/80">
+                    <p className="text-body">
                       Encino, CA 91316
                     </p>
                   </div>
@@ -274,14 +274,14 @@ export function ContactSection() {
 
                 {/* Hours */}
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-lg glass flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-pink-400" />
+                  <div className="w-12 h-12 rounded-lg elegant-card flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-sage-600" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white">
+                    <p className="font-semibold text-stone-900">
                       Mon-Fri: 8AM-5PM
                     </p>
-                    <p className="text-white/80">
+                    <p className="text-body">
                       Sat: By Appointment
                     </p>
                   </div>
@@ -290,12 +290,12 @@ export function ContactSection() {
             </Card>
 
             {/* Service Promise */}
-            <Card className="border-pink-500/30">
+            <Card className="border-warm-200/50 elegant-card">
               <CardContent className="pt-6 text-center">
-                <h3 className="text-xl font-bold text-gradient-pink mb-3">
+                <h3 className="text-xl font-bold text-gradient-earth mb-3">
                   Our Promise to You
                 </h3>
-                <ul className="space-y-2 text-white/80">
+                <ul className="space-y-2 text-body">
                   <li className="flex items-center justify-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
                     <span>Free, no-obligation consultations</span>
