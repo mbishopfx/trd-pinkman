@@ -37,8 +37,8 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: #faf8f5;
-  color: hsl(var(--foreground));
+  background: #fafafa;
+  color: #404040;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,27 +46,27 @@ body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(240, 237, 230, 0.3);
+  background: rgba(250, 250, 250, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(160, 138, 117, 0.3);
-  border-radius: 4px;
+  background: rgba(115, 115, 115, 0.3);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(160, 138, 117, 0.5);
+  background: rgba(115, 115, 115, 0.5);
 }
 
 /* Portola-inspired utility classes */
 @layer utilities {
   .elegant-card {
-    @apply bg-white/80 backdrop-blur-sm border border-stone-200/50 rounded-lg shadow-sm;
-    box-shadow: 0 4px 20px 0 rgba(160, 138, 117, 0.08);
+    @apply bg-white border-0 shadow-sm;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   }
   
   .portola-card {
@@ -74,36 +74,23 @@ body {
   }
   
   .portola-nav {
-    @apply backdrop-blur-md bg-stone-50/90 border-b border-stone-200/50;
-    box-shadow: 0 1px 3px 0 rgba(160, 138, 117, 0.1);
+    @apply backdrop-blur-md bg-neutral-800/95;
   }
   
   .portola-button {
-    @apply bg-stone-800 hover:bg-stone-900 text-white px-8 py-3 rounded-sm transition-all duration-300 font-medium tracking-wide;
+    @apply bg-neutral-800 hover:bg-neutral-900 text-white px-8 py-3 text-sm font-medium tracking-widest transition-all duration-300;
   }
   
   .portola-button-outline {
-    @apply border-2 border-stone-800 hover:bg-stone-800 text-stone-800 hover:text-white px-8 py-3 rounded-sm transition-all duration-300 font-medium tracking-wide;
-  }
-  
-  .text-gradient-earth {
-    @apply bg-gradient-to-r from-amber-700 via-orange-600 to-amber-800 bg-clip-text text-transparent;
-  }
-  
-  .text-gradient-sage {
-    @apply bg-gradient-to-r from-green-700 via-emerald-600 to-green-800 bg-clip-text text-transparent;
+    @apply border border-neutral-800 hover:bg-neutral-800 text-neutral-800 hover:text-white px-8 py-3 text-sm font-medium tracking-widest transition-all duration-300;
   }
   
   .elegant-shadow {
-    box-shadow: 0 8px 32px rgba(160, 138, 117, 0.12);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   }
   
   .elegant-shadow-lg {
-    box-shadow: 0 12px 48px rgba(160, 138, 117, 0.15);
-  }
-  
-  .portola-gradient {
-    background: linear-gradient(135deg, #faf8f5 0%, #f5f1eb 50%, #f0ebe3 100%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -142,23 +129,22 @@ body {
 /* Hero section specific styles */
 .hero-gradient {
   background: linear-gradient(135deg, 
-    rgba(245, 241, 235, 0.9) 0%, 
-    rgba(250, 248, 245, 0.95) 50%, 
-    rgba(240, 235, 227, 0.9) 100%
+    rgba(250, 250, 250, 0.9) 0%, 
+    rgba(245, 245, 245, 0.95) 50%, 
+    rgba(240, 240, 240, 0.9) 100%
   );
 }
 
-/* Subtle texture overlay */
+/* Clean minimal overlay */
 .texture-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  opacity: 0.03;
+  opacity: 0.02;
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(160, 138, 117, 0.4) 1px, transparent 1px),
-    radial-gradient(circle at 75% 75%, rgba(194, 174, 156, 0.4) 1px, transparent 1px);
-  background-size: 60px 60px;
+    radial-gradient(circle at 25% 25%, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
 }
 
 /* Typography utilities */
@@ -168,15 +154,15 @@ body {
   }
   
   .text-display {
-    @apply font-display text-stone-900 leading-tight;
+    @apply font-display text-neutral-800 leading-tight;
   }
   
   .text-body {
-    @apply text-stone-700 leading-relaxed;
+    @apply text-neutral-600 leading-relaxed;
   }
   
   .text-muted {
-    @apply text-stone-500;
+    @apply text-neutral-500;
   }
 }
 
