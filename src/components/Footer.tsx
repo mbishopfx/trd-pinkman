@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Phone, Mail, MapPin, Clock, Star, Facebook, Instagram, Linkedin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { serviceAreas, siteConfig } from '@/lib/utils'
@@ -19,7 +20,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative bg-stone-100/80 backdrop-blur-xl border-t border-stone-200/50">
+    <footer className="relative bg-neutral-100 border-t border-neutral-200">
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -55,7 +56,7 @@ export function Footer() {
               </div>
             </div>
 
-            <p className="text-body mb-6 leading-relaxed">
+            <p className="text-neutral-600 mb-6 leading-relaxed">
               Architectural finishes that tell their own stories. Premium painting services and specialty finishes 
               across Sherman Oaks, Encino, and the greater Los Angeles area.
             </p>
@@ -80,34 +81,34 @@ export function Footer() {
               <h5 className="text-sm font-semibold text-stone-900 mb-3">Follow Us</h5>
               <div className="flex items-center space-x-3">
                 <motion.a
-                  href="#"
+                  href="https://www.facebook.com/CallThePinkGuy"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 rounded-lg elegant-card flex items-center justify-center hover:elegant-shadow transition-all duration-300 group"
                 >
-                  <Facebook className="w-5 h-5 text-warm-600 group-hover:text-warm-700" />
+                  <Facebook className="w-5 h-5 text-neutral-600 group-hover:text-neutral-800" />
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="https://www.instagram.com/callthepinkguy"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 rounded-lg elegant-card flex items-center justify-center hover:elegant-shadow transition-all duration-300 group"
                 >
-                  <Instagram className="w-5 h-5 text-sage-600 group-hover:text-sage-700" />
+                  <Instagram className="w-5 h-5 text-neutral-600 group-hover:text-neutral-800" />
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href="https://www.linkedin.com/company/the-pink-guy-painting"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 rounded-lg elegant-card flex items-center justify-center hover:elegant-shadow transition-all duration-300 group"
                 >
-                  <Linkedin className="w-5 h-5 text-warm-600 group-hover:text-warm-700" />
+                  <Linkedin className="w-5 h-5 text-neutral-600 group-hover:text-neutral-800" />
                 </motion.a>
               </div>
             </div>
@@ -125,7 +126,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="text-xl font-bold text-stone-900 mb-6">
+            <h4 className="text-xl font-bold text-neutral-800 mb-6">
               Get In Touch
             </h4>
 
@@ -212,26 +213,31 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="text-xl font-bold text-stone-900 mb-6">
+            <h4 className="text-xl font-bold text-neutral-800 mb-6">
               Our Services
             </h4>
 
             <ul className="space-y-3">
               {[
-                'Interior Painting',
-                'Exterior Painting', 
-                'Commercial Painting',
-                'Cabinet Refinishing',
-                'Lime Wash',
-                'Venetian Plaster',
-                'Handyman Services',
-                'Drywall Repair'
+                { name: 'Interior Painting', href: '/services#interior-painting' },
+                { name: 'Exterior Painting', href: '/services#exterior-painting' }, 
+                { name: 'Commercial Painting', href: '/services#commercial-painting' },
+                { name: 'Cabinet Refinishing', href: '/services#cabinet-refinishing' },
+                { name: 'Lime Wash', href: '/services#lime-wash' },
+                { name: 'Venetian Plaster', href: '/services#venetian-plaster' },
+                { name: 'Handyman Services', href: '/services#handyman-services' },
+                { name: 'Drywall Repair', href: '/services#drywall-repair' }
               ].map((service, idx) => (
-                <li key={service} className="flex items-center space-x-3 group cursor-pointer">
-                  <div className="w-2 h-2 bg-gradient-to-r from-warm-500 to-warm-600 rounded-full group-hover:scale-125 transition-transform" />
-                  <span className="text-body group-hover:text-stone-900 group-hover:translate-x-1 transition-all duration-300">
-                    {service}
-                  </span>
+                <li key={service.name}>
+                  <Link 
+                    href={service.href} 
+                    className="flex items-center space-x-3 group cursor-pointer hover:no-underline"
+                  >
+                    <div className="w-2 h-2 bg-neutral-600 rounded-full group-hover:scale-125 group-hover:bg-neutral-800 transition-all" />
+                    <span className="text-neutral-600 group-hover:text-neutral-900 group-hover:translate-x-1 transition-all duration-300">
+                      {service.name}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -244,25 +250,32 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h4 className="text-xl font-bold text-stone-900 mb-6">
+            <h4 className="text-xl font-bold text-neutral-800 mb-6">
               Service Areas
             </h4>
 
             <div className="grid grid-cols-1 gap-2">
               {serviceAreas.slice(0, 12).map((area, idx) => (
-                <div key={area} className="flex items-center space-x-2 group">
-                  <div className="w-1.5 h-1.5 bg-warm-600 rounded-full group-hover:bg-warm-700 transition-colors" />
-                  <span className="text-sm text-body group-hover:text-stone-900 transition-colors">
+                <Link 
+                  key={area} 
+                  href={`/contact?area=${encodeURIComponent(area)}`}
+                  className="flex items-center space-x-2 group hover:no-underline"
+                >
+                  <div className="w-1.5 h-1.5 bg-neutral-600 rounded-full group-hover:bg-neutral-800 transition-colors" />
+                  <span className="text-sm text-neutral-600 group-hover:text-neutral-900 transition-colors">
                     {area}
                   </span>
-                </div>
+                </Link>
               ))}
-              <div className="flex items-center space-x-2 mt-2">
-                <div className="w-1.5 h-1.5 bg-warm-600 rounded-full" />
-                <span className="text-sm text-gradient-earth font-medium">
+              <Link 
+                href="/contact" 
+                className="flex items-center space-x-2 mt-2 group hover:no-underline"
+              >
+                <div className="w-1.5 h-1.5 bg-neutral-600 rounded-full group-hover:bg-neutral-800 transition-colors" />
+                <span className="text-sm text-neutral-600 group-hover:text-neutral-900 font-medium">
                   + Greater Los Angeles
                 </span>
-              </div>
+              </Link>
             </div>
           </motion.div>
         </div>
