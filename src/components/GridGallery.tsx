@@ -8,9 +8,9 @@ const galleryImages = [
   {
     id: 1,
     src: '/pinkman2.png',
-    alt: 'Traditional Finishes',
-    title: 'Traditional Finishes',
-    description: 'Lime-based paints and authentic pigments in a variety of hand-crafted hues for interior and exterior walls.',
+    alt: 'Designer Finishes',
+    title: 'Designer Finishes',
+    description: 'Walls are more than surfaces — they\'re statements. Our specialty finishes include hand-applied limewash, refined Roman and Moroccan clays, polished Venetian plaster, sleek micro-cement, and durable waterproof plasters.',
     span: 'row-span-2'
   },
   {
@@ -18,7 +18,7 @@ const galleryImages = [
     src: '/pinkman4.png',
     alt: 'Specialty Finishes', 
     title: 'Specialty Finishes',
-    description: 'Artisanal finishes that balance color and texture for a look and feel both timeless and modern.',
+    description: 'Artisanal finishes that balance color and texture for a look and feel both timeless and modern. Each technique is rooted in tradition yet designed for modern living.',
     span: ''
   },
   {
@@ -26,7 +26,7 @@ const galleryImages = [
     src: '/pinkmanreal.png',
     alt: 'Samples & Accessories',
     title: 'Samples & Accessories', 
-    description: 'Everything you need to get started and see how our finishes perform in the real world.',
+    description: 'Everything you need to get started and see how our finishes perform in the real world. Experience the quality and craftsmanship before making your selection.',
     span: ''
   },
   {
@@ -34,7 +34,7 @@ const galleryImages = [
     src: '/pinkmanreal1.png',
     alt: 'Roman Clay Collection',
     title: 'Roman Clay',
-    description: 'Ideal for smooth interior walls, our clay-based, knife-applied plaster finish gives a subtle modern/rustic look and feel.',
+    description: 'Ideal for smooth interior walls, our clay-based, knife-applied plaster finish gives a subtle modern/rustic look and feel, creating depth, texture, and beauty.',
     span: 'col-span-2'
   }
 ]
@@ -53,12 +53,11 @@ export function GridGallery() {
           className="text-center mb-12 md:mb-16 px-4 sm:px-0"
         >
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display text-neutral-800 mb-3 sm:mb-4 leading-tight">
-            You've never seen this offered to 
-            <br className="hidden sm:block" />
-            <span className="sm:hidden"> </span>watch paint dry.
+            Beauty Will Save the World
           </h2>
           <p className="text-neutral-600 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
-            Our interior and exterior architectural finishes communicate with the environment in which you place them.
+            Our interior and exterior architectural finishes communicate with the environment in which you place them. 
+            Creating depth, texture, and beauty that transform ordinary walls into rooms that tell stories.
           </p>
         </motion.div>
 
@@ -139,7 +138,8 @@ export function GridGallery() {
             
             <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
               Communicating with the environment in which you place it, this finish presents a 
-              subtle, yet dynamic patina that softens and variegates as it seasons.
+              subtle, yet dynamic patina that softens and variegates as it seasons. Each technique 
+              is rooted in tradition yet designed for modern living.
             </p>
             
             <button className="bg-neutral-800 hover:bg-neutral-900 text-white px-6 sm:px-8 py-3 text-xs sm:text-sm font-medium tracking-widest transition-colors">

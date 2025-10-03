@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Crimson_Text } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { StructuredData } from '@/components/StructuredData'
+import { AnalyticsProvider } from '@/components/AnalyticsProvider'
 import '@/styles/globals.css'
 
 const inter = Inter({ 
@@ -28,8 +29,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://callthepinkguy.com'),
   title: {
-    default: 'The Pink Guy Painting LLC | Premium Architectural Finishes Sherman Oaks',
-    template: '%s | The Pink Guy Painting LLC'
+    default: 'The Pink Guy | Premium Architectural Finishes Sherman Oaks',
+    template: '%s | The Pink Guy'
   },
   description: 'Architectural finishes that tell their own stories. Premium painting services, specialty finishes, and handyman repairs across Sherman Oaks, Encino, and Los Angeles. Interior painting, exterior painting, cabinet refinishing, lime wash, Venetian plaster, Roman clay finishes.',
   keywords: [
@@ -48,9 +49,9 @@ export const metadata: Metadata = {
     'texture painting Los Angeles',
     'handyman services Sherman Oaks'
   ],
-  authors: [{ name: 'The Pink Guy Painting LLC' }],
-  creator: 'The Pink Guy Painting LLC',
-  publisher: 'The Pink Guy Painting LLC',
+  authors: [{ name: 'The Pink Guy' }],
+  creator: 'The Pink Guy',
+  publisher: 'The Pink Guy',
   robots: {
     index: true,
     follow: true,
@@ -66,21 +67,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://callthepinkguy.com',
-    siteName: 'The Pink Guy Painting LLC',
-    title: 'The Pink Guy Painting LLC | Premium Architectural Finishes Sherman Oaks',
+    siteName: 'The Pink Guy',
+    title: 'The Pink Guy | Premium Architectural Finishes Sherman Oaks',
     description: 'Architectural finishes that tell their own stories. Premium painting services, specialty finishes, and handyman repairs across Sherman Oaks, Encino, and Los Angeles.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'The Pink Guy Painting LLC - Professional Painting and Handyman Services',
+        alt: 'The Pink Guy - Professional Painting and Handyman Services',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Pink Guy Painting LLC | Premium Architectural Finishes Sherman Oaks',
+    title: 'The Pink Guy | Premium Architectural Finishes Sherman Oaks',
     description: 'Architectural finishes that tell their own stories. Premium painting services and specialty finishes across Sherman Oaks and LA.',
     images: ['/og-image.jpg'],
   },
@@ -109,7 +110,9 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.className} antialiased`}>
-        {children}
+        <AnalyticsProvider>
+          {children}
+        </AnalyticsProvider>
         <Analytics />
       </body>
     </html>

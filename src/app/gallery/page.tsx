@@ -12,61 +12,79 @@ import { Button } from '@/components/ui/button'
 const galleryItems = [
   {
     id: 1,
-    category: 'Interior Painting',
-    title: 'Modern Living Room Transformation',
-    description: 'Complete interior repaint with accent wall and crown molding',
+    category: 'Roman Clay',
+    title: 'Luxury Residential Interior',
+    description: 'Clay-based, knife-applied plaster finish creating a subtle modern/rustic look and feel',
     before: '/gallery/interior-before-1.jpg',
     after: '/gallery/interior-after-1.jpg',
     featured: true
   },
   {
     id: 2,
-    category: 'Exterior Painting',
-    title: 'Stucco Home Refresh',
-    description: 'Full exterior stucco painting with trim and fascia work',
+    category: 'Limewash',
+    title: 'Historic Home Restoration',
+    description: 'Traditional limewash application preserving authentic character while providing modern protection',
     before: '/gallery/exterior-before-1.jpg',
     after: '/gallery/exterior-after-1.jpg',
     featured: true
   },
   {
     id: 3,
-    category: 'Cabinet Refinishing',
-    title: 'Kitchen Cabinet Makeover',
-    description: 'Professional spray finish cabinet refinishing',
+    category: 'Venetian Plaster',
+    title: 'Designer Feature Wall',
+    description: 'Hand-applied Venetian plaster creating depth, texture, and beauty that transforms ordinary walls',
     before: '/gallery/cabinet-before-1.jpg',
     after: '/gallery/cabinet-after-1.jpg',
     featured: false
   },
   {
     id: 4,
-    category: 'Venetian Plaster',
-    title: 'Luxury Feature Wall',
-    description: 'Hand-troweled Venetian plaster with marble-like finish',
+    category: 'Micro-cement',
+    title: 'Contemporary Bathroom Finish',
+    description: 'Sleek micro-cement application for modern living with seamless, waterproof surface',
     before: '/gallery/plaster-before-1.jpg',
     after: '/gallery/plaster-after-1.jpg',
     featured: false
   },
   {
     id: 5,
-    category: 'Commercial Painting',
-    title: 'Office Space Renovation',
-    description: 'Modern office painting with brand colors',
+    category: 'Architectural Coatings',
+    title: 'Commercial Project',
+    description: 'Professional-grade architectural coatings designed for performance and longevity',
     before: '/gallery/commercial-before-1.jpg',
     after: '/gallery/commercial-after-1.jpg',
     featured: false
   },
   {
     id: 6,
-    category: 'Handyman Services',
-    title: 'Complete Home Repair',
-    description: 'Drywall repair, trim work, and touch-up painting',
+    category: 'Interior Painting',
+    title: 'Complete Home Transformation',
+    description: 'Premium interior painting with architectural finishes that tell their own stories',
     before: '/gallery/handyman-before-1.jpg',
     after: '/gallery/handyman-after-1.jpg',
+    featured: false
+  },
+  {
+    id: 7,
+    category: 'Exterior Painting',
+    title: 'Coastal Property Refresh',
+    description: 'Durable exterior finishes designed to communicate with the environment',
+    before: '/gallery/exterior-before-2.jpg',
+    after: '/gallery/exterior-after-2.jpg',
+    featured: false
+  },
+  {
+    id: 8,
+    category: 'Cabinet Refinishing',
+    title: 'Kitchen Cabinet Transformation',
+    description: 'Professional cabinet refinishing creating surfaces that are statements of style',
+    before: '/gallery/cabinet-before-2.jpg',
+    after: '/gallery/cabinet-after-2.jpg',
     featured: false
   }
 ]
 
-const categories = ['All', 'Interior Painting', 'Exterior Painting', 'Cabinet Refinishing', 'Venetian Plaster', 'Commercial Painting', 'Handyman Services']
+const categories = ['All', 'Roman Clay', 'Limewash', 'Venetian Plaster', 'Micro-cement', 'Architectural Coatings', 'Interior Painting', 'Exterior Painting', 'Cabinet Refinishing']
 
 const GalleryItem = ({ item, index, onClick }: { item: any, index: number, onClick: () => void }) => (
   <motion.div
@@ -194,9 +212,9 @@ export default function GalleryPage() {
                   <span className="text-gradient-earth">Gallery</span>
                 </h1>
                 <p className="text-xl text-body mb-8 max-w-4xl mx-auto leading-relaxed">
-                  See the transformation difference our meticulous prep-first process makes. 
-                  From interior refreshes to complete exterior makeovers, every project showcases 
-                  our commitment to quality craftsmanship.
+                  Walls are the soul of the architectural story. See how our specialty finishes create 
+                  depth, texture, and beauty that transform ordinary walls into rooms that tell stories. 
+                  Each technique is rooted in tradition yet designed for modern living.
                 </p>
               </motion.div>
             </div>
@@ -258,11 +276,11 @@ export default function GalleryPage() {
               className="glass-card p-8 lg:p-12"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gradient-pink mb-6">
-                Ready for Your Transformation?
+                Ready to Start Your Story?
               </h2>
               <p className="text-xl text-body mb-8 leading-relaxed">
-                Let's discuss your project and create something amazing together. 
-                Every project starts with a free consultation.
+                Let us help you compose spaces where beauty lives and lasts. 
+                Every architectural story begins with a conversation.
               </p>
               <button
                 onClick={() => window.location.href = 'tel:+18183832527'}

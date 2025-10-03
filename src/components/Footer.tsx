@@ -15,10 +15,6 @@ export function Footer() {
     window.location.href = 'tel:+18183832527'
   }
 
-  const handleEmail = () => {
-    window.location.href = 'mailto:jackson@callthepinkguy.com'
-  }
-
   return (
     <footer className="relative bg-neutral-100 border-t border-neutral-200">
       
@@ -48,7 +44,7 @@ export function Footer() {
               <div className="relative h-10 w-auto mb-4">
                 <Image
                   src="/bannerlogo.png"
-                  alt="The Pink Guy Painting LLC"
+                  alt="The Pink Guy"
                   width={180}
                   height={40}
                   className="h-full w-auto object-contain filter drop-shadow-lg"
@@ -57,7 +53,7 @@ export function Footer() {
             </div>
 
             <p className="text-neutral-600 mb-6 leading-relaxed">
-              Architectural finishes that tell their own stories. Premium painting services and specialty finishes 
+              The pink guy paint and plaster. Architectural finishes that tell their own stories. Premium painting services and specialty finishes 
               across Sherman Oaks, Encino, and the greater Los Angeles area.
             </p>
 
@@ -147,20 +143,20 @@ export function Footer() {
                 </div>
               </div>
 
-              {/* Email */}
-              <div className="flex items-center space-x-3 group cursor-pointer" onClick={handleEmail}>
+              {/* Contact Form CTA */}
+              <Link href="/contact" className="flex items-center space-x-3 group cursor-pointer">
                 <div className="w-12 h-12 rounded-lg elegant-card flex items-center justify-center group-hover:elegant-shadow transition-all duration-300">
                   <Mail className="w-5 h-5 text-sage-600" />
                 </div>
                 <div>
-                  <p className="font-semibold text-stone-900 group-hover:text-sage-700 transition-colors break-all">
-                    jackson@callthepinkguy.com
+                  <p className="font-semibold text-stone-900 group-hover:text-sage-700 transition-colors">
+                    Send us a message
                   </p>
                   <p className="text-sm text-muted">
-                    Email us anytime
+                    Get your free quote
                   </p>
                 </div>
-              </div>
+              </Link>
 
               {/* Address */}
               <div className="flex items-start space-x-3">
@@ -293,7 +289,7 @@ export function Footer() {
             {/* Copyright */}
             <div className="text-center lg:text-left">
               <p className="text-muted text-sm">
-                © {currentYear} The Pink Guy Painting LLC. All rights reserved.
+                © {currentYear} The Pink Guy. All rights reserved.
               </p>
               <p className="text-stone-400 text-xs mt-1">
                 Licensed • Insured • Professional

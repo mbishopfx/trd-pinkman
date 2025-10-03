@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { saveLead } from '@/lib/supabase'
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -18,14 +19,57 @@ export function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    setIsSubmitted(true)
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' })
-    }, 3000)
+    
+    try {
+      // Parse name into first and last name
+      const nameParts = formData.name.trim().split(' ')
+      const firstName = nameParts[0] || ''
+      const lastName = nameParts.slice(1).join(' ') || ''
+
+      // Prepare lead data
+      const leadData = {
+        first_name: firstName,
+        last_name: lastName,
+        email: formData.email,
+        phone: formData.phone,
+        description: formData.message,
+        project_type: formData.service || 'general-inquiry',
+        source_page: window.location.pathname,
+        form_type: 'contact-form'
+      }
+
+      // Save to Supabase
+      await saveLead(leadData)
+
+      // Send email notification
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(leadData),
+        })
+
+        if (!response.ok) {
+          console.error('Failed to send email notification')
+        }
+      } catch (emailError) {
+        console.error('Error sending email:', emailError)
+        // Don't fail the form submission if email fails
+      }
+
+      setIsSubmitted(true)
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({ name: '', email: '', phone: '', service: '', message: '' })
+      }, 3000)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('There was an error submitting your form. Please try again.')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

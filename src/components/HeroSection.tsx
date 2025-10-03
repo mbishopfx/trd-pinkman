@@ -32,7 +32,7 @@ export function HeroSection() {
           className="mb-8"
         >
           <span className="text-sm tracking-widest text-white/90 font-medium">
-            THE PINK GUY PAINTS
+            THE PINK GUY
           </span>
         </motion.div>
 
@@ -43,8 +43,8 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display mb-6 sm:mb-8 leading-tight px-4 sm:px-0"
         >
-          Finishes are just the{' '}
-          <div className="italic">beginning</div>
+          Walls are the soul of the{' '}
+          <div className="italic">architectural story</div>
         </motion.h1>
 
         {/* Description */}
@@ -54,7 +54,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-base sm:text-lg lg:text-xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
         >
-          Architectural finishes that tell their own stories and set the stage for yours.
+          Fine Paint finishes, applied by masters of the trade. Limewash | Roman Clay | Architectural Coatings
         </motion.p>
 
         {/* CTA Button */}
@@ -64,10 +64,13 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex justify-center px-4 sm:px-0"
         >
-          <button className="group bg-neutral-800 hover:bg-neutral-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-medium tracking-widest transition-all duration-300 flex items-center space-x-2 sm:space-x-3">
-            <span>VIEW COLLECTIONS</span>
+          <a 
+            href="/contact?ref=hero"
+            className="group bg-neutral-800 hover:bg-neutral-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-medium tracking-widest transition-all duration-300 flex items-center space-x-2 sm:space-x-3"
+          >
+            <span>START YOUR STORY</span>
             <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </motion.div>
       </div>
       

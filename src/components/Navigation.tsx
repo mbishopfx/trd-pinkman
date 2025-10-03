@@ -9,18 +9,27 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { href: '/', label: 'COLLECTIONS' },
-  { href: '/services', label: 'SAMPLES & ACCESSORIES' },
-  { href: '/gallery', label: 'PRIMERS & SEALERS' },
-  { href: '/about', label: 'PAINT INFORMATION' },
-  { href: '/contact', label: 'GALLERY' },
+  { href: '/paint-management', label: 'PAINT MANAGEMENT' },
+  { href: '/our-story', label: 'OUR STORY' },
+  { href: '/gallery', label: 'GALLERY' },
   { href: '/contact', label: 'CONTACT' },
-  { href: '/contact', label: 'LOCATIONS' },
+  { href: '/locations', label: 'LOCATIONS' },
+]
+
+const offeringsItems = [
+  { href: '/offerings/limewash', label: 'Limewash' },
+  { href: '/offerings/roman-clay-plaster', label: 'Roman Clay/ Plaster' },
+  { href: '/offerings/micro-cement', label: 'Micro-cement' },
+  { href: '/offerings/interior-painting', label: 'Interior Painting' },
+  { href: '/offerings/cabinet-refinishing', label: 'Cabinet Refinishing' },
+  { href: '/offerings/commercial', label: 'Commercial' },
+  { href: '/offerings/exterior', label: 'Exterior' },
 ]
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isOfferingsOpen, setIsOfferingsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,23 +65,67 @@ export function Navigation() {
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="text-white font-display text-lg sm:text-xl lg:text-2xl tracking-wide"
+                className="relative h-8 sm:h-10 w-auto"
               >
-                THE PINK GUY
-                <div className="text-xs tracking-widest text-neutral-300 mt-0.5 sm:mt-1">
-                  PAINTS
-                </div>
+                <Image
+                  src="/bannerlogo.png"
+                  alt="The Pink Guy"
+                  width={180}
+                  height={40}
+                  className="h-full w-auto object-contain filter drop-shadow-lg"
+                  priority
+                />
               </motion.div>
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center justify-center space-x-8 flex-1">
+              {/* Offerings Dropdown */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0 }}
+                className="relative"
+                onMouseEnter={() => setIsOfferingsOpen(true)}
+                onMouseLeave={() => setIsOfferingsOpen(false)}
+              >
+                <button className="text-white/90 hover:text-white text-xs font-medium transition-all duration-300 relative group py-2 tracking-wider">
+                  OFFERINGS
+                  <span className="absolute bottom-0 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300" />
+                </button>
+                
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {isOfferingsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-56 bg-neutral-800 border border-white/10 rounded-sm shadow-xl z-50"
+                    >
+                      <div className="py-2">
+                        {offeringsItems.map((item, index) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="block px-4 py-2 text-xs text-white/90 hover:text-white hover:bg-white/5 transition-all duration-200 tracking-wider"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.href}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  transition={{ delay: (index + 1) * 0.05 }}
                 >
                   <Link
                     href={item.href}
@@ -140,12 +193,35 @@ export function Navigation() {
                 
                 {/* Mobile Navigation Items */}
                 <div className="flex flex-col space-y-6">
+                  {/* Mobile Offerings Section */}
+                  <motion.div
+                    initial={{ x: 100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0 }}
+                  >
+                    <div className="text-sm font-medium text-white/90 py-2 tracking-wider">
+                      OFFERINGS
+                    </div>
+                    <div className="ml-4 space-y-3 mt-2">
+                      {offeringsItems.map((item, index) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block text-xs text-white/70 hover:text-white py-1 tracking-wider transition-all duration-300"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+
                   {navItems.map((item, index) => (
                     <motion.div
                       key={item.href}
                       initial={{ x: 100, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: index * 0.05 }}
+                      transition={{ delay: (index + 1) * 0.05 }}
                     >
                       <Link
                         href={item.href}
